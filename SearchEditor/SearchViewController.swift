@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import IHKeyboardAvoiding
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UITextFieldDelegate {
+
+    @IBOutlet var avoidingView: UIView!
+    @IBOutlet var editorField: UITextView!
 
     @IBOutlet weak var webView: UIWebView!
     var passedQuery: String!
@@ -16,6 +20,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Web読み込み
         var search_url:String = "https://search.goo.ne.jp/web.jsp?MT="+passedQuery+"&IE=UTF-8&OE=UTF-8"
         
         search_url = search_url.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
@@ -23,7 +28,23 @@ class SearchViewController: UIViewController {
         let requestURL = NSURL(string: search_url)
         let request = NSURLRequest(url: requestURL! as URL)
         webView.loadRequest(request as URLRequest)
-        
+
+        KeyboardAvoiding.avoidingView = self.avoidingView
+
+    }
+
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == self.editorField {
+            KeyboardAvoiding.avoidingView = self.avoidingView
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.editorField {
+            self.editorField.becomeFirstResponder()
+        }
+        return true
     }
 
     override func didReceiveMemoryWarning() {

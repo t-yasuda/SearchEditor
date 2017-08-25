@@ -27,20 +27,42 @@
                                 <items>
                                     <navigationItem id="gWC-es-hNn">
                                         <nil key="title"/>
-                                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="gzb-jj-VHT">
-                                            <rect key="frame" x="16" y="7" width="343" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                        </textField>
+                                        <barButtonItem key="leftBarButtonItem" title="メニュー" id="Npu-Nc-Vbe"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0h4-oj-GN1">
+                                <rect key="frame" x="0.0" y="624" width="375" height="43"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gzb-jj-VHT">
+                                        <rect key="frame" x="8" y="5" width="359" height="33"/>
+                                        <color key="textColor" red="0.95817379320415186" green="1" blue="0.80008898403250228" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.49985330760000002" green="0.77008872549999996" blue="0.81267279049999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gzb-jj-VHT" secondAttribute="bottom" constant="5" id="8eO-Ql-gLt"/>
+                                    <constraint firstAttribute="width" constant="375" id="Kpj-MT-Sky"/>
+                                    <constraint firstItem="gzb-jj-VHT" firstAttribute="top" secondItem="0h4-oj-GN1" secondAttribute="top" constant="5" id="M6Y-CZ-NTw"/>
+                                    <constraint firstAttribute="trailing" secondItem="gzb-jj-VHT" secondAttribute="trailing" constant="8" id="UMW-45-CBq"/>
+                                    <constraint firstAttribute="height" constant="43" id="YLt-oF-cg7"/>
+                                    <constraint firstItem="gzb-jj-VHT" firstAttribute="top" secondItem="0h4-oj-GN1" secondAttribute="top" constant="10" id="fED-mh-gtZ"/>
+                                    <constraint firstItem="gzb-jj-VHT" firstAttribute="leading" secondItem="0h4-oj-GN1" secondAttribute="leading" constant="8" id="g0a-0D-o3U"/>
+                                    <constraint firstAttribute="bottom" secondItem="gzb-jj-VHT" secondAttribute="bottom" constant="10" id="gnA-i5-NAo"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0h4-oj-GN1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SJr-Ve-FNg"/>
+                            <constraint firstAttribute="trailing" secondItem="0h4-oj-GN1" secondAttribute="trailing" id="aDW-gB-KOw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0h4-oj-GN1" secondAttribute="bottom" id="yAx-Cp-1Hc"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="avoidingView" destination="0h4-oj-GN1" id="AM7-9Z-AcX"/>
                         <outlet property="queryField" destination="gzb-jj-VHT" id="2cp-Sa-FPj"/>
                         <outlet property="searchDisplayController" destination="RkF-3z-mVQ" id="Of7-SQ-CQZ"/>
                         <segue destination="9H0-qm-TJe" kind="presentation" identifier="toSearch" animates="NO" modalTransitionStyle="crossDissolve" id="xRT-x5-vA1"/>
@@ -56,7 +78,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="94" y="136"/>
+            <point key="canvasLocation" x="93.599999999999994" y="135.38230884557723"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="Wy2-CG-qQK">
@@ -88,10 +110,38 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOw-ix-XqJ">
+                                <rect key="frame" x="0.0" y="573" width="375" height="94"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FeZ-PK-Xxu">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="94" id="Cue-iv-4Nj"/>
+                                            <constraint firstAttribute="width" constant="375" id="dKc-iN-QqD"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.95817379320415186" green="1" blue="0.80008898403250228" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.49985330764860875" green="0.77008872547864027" blue="0.81267279046804797" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="FeZ-PK-Xxu" firstAttribute="top" secondItem="QOw-ix-XqJ" secondAttribute="top" id="OTe-4c-gph"/>
+                                    <constraint firstAttribute="bottom" secondItem="FeZ-PK-Xxu" secondAttribute="bottom" id="QCd-DJ-9qS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QOw-ix-XqJ" firstAttribute="leading" secondItem="ehc-He-te7" secondAttribute="leading" id="0g3-aP-HVd"/>
+                            <constraint firstAttribute="trailing" secondItem="QOw-ix-XqJ" secondAttribute="trailing" id="Hv3-8U-I4d"/>
+                            <constraint firstItem="QOw-ix-XqJ" firstAttribute="leading" secondItem="ehc-He-te7" secondAttribute="leading" id="rel-df-jZs"/>
+                            <constraint firstItem="B7V-Hc-h4g" firstAttribute="top" secondItem="QOw-ix-XqJ" secondAttribute="bottom" id="ywv-gd-3hk"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="avoidingView" destination="QOw-ix-XqJ" id="CBe-fV-TK5"/>
+                        <outlet property="editorField" destination="FeZ-PK-Xxu" id="PeB-gs-eFI"/>
                         <outlet property="webView" destination="3lW-RF-glG" id="kTk-Mn-5j7"/>
                     </connections>
                 </viewController>
