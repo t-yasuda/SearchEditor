@@ -14,11 +14,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var avoidingView: UIView!
     @IBOutlet var queryField: UITextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         queryField.delegate = self
-        
+                
         KeyboardAvoiding.avoidingView = self.avoidingView
         
     }
@@ -57,7 +57,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 
 }
 

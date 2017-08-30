@@ -35,7 +35,7 @@
                                 <rect key="frame" x="0.0" y="624" width="375" height="43"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gzb-jj-VHT">
-                                        <rect key="frame" x="8" y="5" width="359" height="33"/>
+                                        <rect key="frame" x="8" y="5" width="359" height="30"/>
                                         <color key="textColor" red="0.95817379320415186" green="1" blue="0.80008898403250228" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -119,17 +119,40 @@
                                             <constraint firstAttribute="height" constant="94" id="Cue-iv-4Nj"/>
                                             <constraint firstAttribute="width" constant="375" id="dKc-iN-QqD"/>
                                         </constraints>
-                                        <color key="textColor" red="0.95817379320415186" green="1" blue="0.80008898403250228" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.95817379319999996" green="1" blue="0.80008898399999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.49985330764860875" green="0.77008872547864027" blue="0.81267279046804797" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.49985330764860875" green="0.77008872547864027" blue="0.81267279046804797" alpha="0.74895466549295775" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="FeZ-PK-Xxu" firstAttribute="top" secondItem="QOw-ix-XqJ" secondAttribute="top" id="OTe-4c-gph"/>
                                     <constraint firstAttribute="bottom" secondItem="FeZ-PK-Xxu" secondAttribute="bottom" id="QCd-DJ-9qS"/>
                                 </constraints>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="91Q-OX-tYJ">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="&lt;" id="WdI-ey-jHT">
+                                        <connections>
+                                            <action selector="goBack" destination="9H0-qm-TJe" id="Cw5-Bq-SwM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="TyD-zf-eGv"/>
+                                    <barButtonItem title="&gt;" id="C5t-92-XeH">
+                                        <connections>
+                                            <action selector="goForward" destination="9H0-qm-TJe" id="nqG-Hf-wBS"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ItP-Os-41Z"/>
+                                    <barButtonItem systemItem="compose" id="kFb-ku-Yi0">
+                                        <connections>
+                                            <action selector="showEditorField" destination="9H0-qm-TJe" id="VPd-9q-o60"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -148,6 +171,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X0j-d4-dC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="925.60000000000002" y="136.28185907046478"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="A0S-r5-E5R">
+            <objects>
+                <viewController id="ubV-sH-PTg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HYk-h7-OgU"/>
+                        <viewControllerLayoutGuide type="bottom" id="qIw-zN-Kli"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RsE-eu-QSD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6oT-A3-wqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596" y="136"/>
         </scene>
     </scenes>
 </document>

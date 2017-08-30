@@ -20,6 +20,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        hideEditorField()
+        
         //Web読み込み
         var search_url:String = "https://search.goo.ne.jp/web.jsp?MT="+passedQuery+"&IE=UTF-8&OE=UTF-8"
         
@@ -46,9 +48,27 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    
+    @IBAction func hideEditorField(){
+        avoidingView.isHidden = true
+    }
+    
+    @IBAction func showEditorField(){
+        avoidingView.isHidden = false
+        editorField.becomeFirstResponder()
+    }
+    
+    @IBAction func goBack(){
+        self.webView.goBack()
+    }
+    
+    @IBAction func goForward(){
+        self.webView.goForward()
     }
     
 }
