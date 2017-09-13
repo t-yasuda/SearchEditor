@@ -9,7 +9,6 @@
 import UIKit
 import IHKeyboardAvoiding
 
-
 class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var avoidingView: UIView!
@@ -17,8 +16,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //背景画像指定
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named:"background.jpg")!)
+        
         queryField.delegate = self
-                
         KeyboardAvoiding.avoidingView = self.avoidingView
         
     }
@@ -47,11 +49,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //次の画面に値を渡すときに使う関数（メソッド）
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //次の画面のオブジェクトを取得
-        let searchViewController = segue.destination as! SearchViewController
+        if segue.identifier == "toSearch" {
+            //次の画面のオブジェクトを取得
+            let searchViewController = segue.destination as! SearchViewController
         
-        //次の画面の変数にこの画面の変数を入れている
-        searchViewController.passedQuery = queryField.text
+            //次の画面の変数にこの画面の変数を入れている
+            searchViewController.passedQuery = queryField.text
+        }
     }
     
     override func didReceiveMemoryWarning() {
