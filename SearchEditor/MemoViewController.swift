@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MemoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MemoTableViewCellDelegate {
     
     var memoDatas = [Dictionary<String,String>]()
     //データの呼び出し
@@ -41,6 +41,8 @@ class MemoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //カスタムセルの場合：カスタムセルの登録
         let nib = UINib(nibName: "MemoTableViewCell", bundle: Bundle.main)
         memoTableView.register(nib, forCellReuseIdentifier: "MemoCell")
+        
+        loadMemo()
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,6 +66,9 @@ class MemoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.memoSummaryLabel.text = memoDatas[indexPath.row]["summary"]
         cell.deleteMemoButton.tag = indexPath.row
         
+        cell.delegate = self
+        
+        
         //cellを返す
         return cell
     }
@@ -72,6 +77,8 @@ class MemoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         //データの呼び出し
         loadMemo()
+        memoTableView.reloadData()
+        
     }
     
     //セルが押された時のデリゲートメソッド
@@ -99,6 +106,10 @@ class MemoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.dismiss(animated: true, completion: nil)
     }
 
+    func didTapDelete() {
+        loadMemo()
+        memoTableView.reloadData()
+    }
     
 
 }

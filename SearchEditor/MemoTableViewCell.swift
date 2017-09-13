@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol MemoTableViewCellDelegate {
+    func didTapDelete()
+}
+
 class MemoTableViewCell: UITableViewCell {
+    
+    var delegate: MemoTableViewCellDelegate?
     
     @IBOutlet var memoImageView: UIImageView!
     
@@ -44,10 +50,7 @@ class MemoTableViewCell: UITableViewCell {
             ud.set(savedMemoArray, forKey: "memoArray")
             ud.synchronize()
             
-            memoUpdatedDateTimeLabel.textColor = UIColor.red
-            memoUrlLabel.textColor = UIColor.red
-            memoSummaryLabel.textColor = UIColor.red
-            deleteMemoButton.removeFromSuperview()
+            self.delegate?.didTapDelete()
         }
     }
 }
