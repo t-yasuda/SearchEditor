@@ -127,29 +127,26 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         if ud.array(forKey: "memoArray") != nil{
             //OptionalからStringにダウンキャスト＆アンラップ
             var saveMemoArray = ud.array(forKey: "memoArray") as! [Dictionary<String,String>]
-            saveMemoArray.append(memoData)
+            saveMemoArray.insert(memoData, at: 0)
             ud.set(saveMemoArray, forKey: "memoArray")
             
             //保存
             ud.synchronize()
 
-            
-            //IndexPathRowを最新にする
-            indexPathRow = saveMemoArray.count
-            
         //ユーザーデフォルトに何も保存されていない場合
         } else {
             var newMemoArray = [Dictionary<String,String>]()
-            newMemoArray.append(memoData)
+            newMemoArray.insert(memoData, at: 0)
             ud.set(newMemoArray, forKey: "memoArray")
             
             //保存
             ud.synchronize()
-
             
-            //IndexPathRowを最新にする
-            indexPathRow = newMemoArray.count
         }
+        
+        //IndexPathRowを最新にする
+        indexPathRow = 0
+
     }
     
     /* -----
@@ -168,7 +165,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             ud.set(savedMemoArray, forKey: "memoArray")
             ud.synchronize()
         }
-        
 
     }
     
@@ -179,16 +175,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         //新規作成後、既存メモを削除する
         let tmpIndexPathRow = indexPathRow
         saveMemo()
-        indexPathRow = tmpIndexPathRow
+        indexPathRow = tmpIndexPathRow! + 1
         deleteMemo()
         
         //IndexPathRowを最新にする
-        let ud = UserDefaults.standard
-        
-        if ud.array(forKey: "memoArray") != nil {
-            let savedMemoArray = ud.array(forKey: "memoArray") as! [Dictionary<String,String>]
-            indexPathRow = savedMemoArray.count
-        }
+        indexPathRow = 0
     }
     
     /* -----
