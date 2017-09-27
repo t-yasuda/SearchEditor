@@ -53,4 +53,5 @@ class MemoTableViewCell: UITableViewCell {
             self.delegate?.didTapDelete()
         }
     }
+
 }

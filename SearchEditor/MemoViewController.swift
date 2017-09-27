@@ -99,6 +99,7 @@ class MemoViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let selectedIndex = memoTableView.indexPathForSelectedRow!
             searchViewController.passedUrlFromMemo = memoDatas[selectedIndex.row]["url"]
             searchViewController.passedMemo = memoDatas[selectedIndex.row]["summary"]
+            searchViewController.passedIndexPathRow = selectedIndex.row
         }
     }
     

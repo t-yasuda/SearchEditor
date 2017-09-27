@@ -14,16 +14,22 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var avoidingView: UIView!
     @IBOutlet var editorField: UITextView!
 
+    //webView
     @IBOutlet weak var webView: UIWebView!
+    
     //メモから渡されたURLとメモ
     var passedUrlFromMemo: String!
     var passedMemo: String!
+    var passedIndexPathRow: Int!
     
     //トップ画面から渡された検索クエリ
     var passedQuery: String!
     
+    var indexPathRow: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        indexPathRow = passedIndexPathRow
         
         /* -----
          Web読み込み
@@ -124,15 +130,56 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             saveMemoArray.append(memoData)
             ud.set(saveMemoArray, forKey: "memoArray")
             
+            //保存
+            ud.synchronize()
+
+            
+            //IndexPathRowを最新にする
+            indexPathRow = saveMemoArray.count
+            
         //ユーザーデフォルトに何も保存されていない場合
         } else {
             var newMemoArray = [Dictionary<String,String>]()
             newMemoArray.append(memoData)
             ud.set(newMemoArray, forKey: "memoArray")
+            
+            //保存
+            ud.synchronize()
+
+            
+            //IndexPathRowを最新にする
+            indexPathRow = newMemoArray.count
+        }
+    }
+    
+    /* -----
+     メモを削除する
+     ----- */
+    @IBAction func deleteMemo(){
+        //今見ているメモが配列の何番目なのか確認
+        let ud = UserDefaults.standard
+        
+        if ud.array(forKey: "memoArray") != nil {
+            //保存していたメモの配列
+            var savedMemoArray = ud.array(forKey: "memoArray") as! [Dictionary<String, String>]
+            //押されたrowの削除
+            savedMemoArray.remove(at: indexPathRow)
+            //保存し直す
+            ud.set(savedMemoArray, forKey: "memoArray")
+            ud.synchronize()
         }
         
-        //保存
-        ud.synchronize()
+
+    }
+    
+    /* -----
+     メモを更新する
+     ----- */
+    @IBAction func updateMemo(){
+        //新規作成後、既存メモを削除する
+        saveMemo()
+        print(indexPathRow)
+        deleteMemo()
     }
     
     /* -----

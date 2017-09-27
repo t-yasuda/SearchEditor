@@ -32,7 +32,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    //return keyが押されたときに呼ばれるデリゲートメソッド
+    /* -----
+     return keyが押されたときに呼ばれるデリゲートメソッド
+    ----- */
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.queryField.becomeFirstResponder()
         
@@ -47,7 +49,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         queryField.becomeFirstResponder()
     }
     
-    //次の画面に値を渡すときに使う関数（メソッド）
+    /* -----
+     次の画面に値を渡すときに使う関数（メソッド）
+    ----- */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSearch" {
             //次の画面のオブジェクトを取得

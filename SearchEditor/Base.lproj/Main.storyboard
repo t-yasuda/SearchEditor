@@ -220,11 +220,19 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkJ-CO-wsk">
-                                        <rect key="frame" x="332" y="8" width="34" height="78"/>
+                                        <rect key="frame" x="332" y="8" width="34" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="saveMemo" destination="9H0-qm-TJe" eventType="touchUpInside" id="baE-7Y-loy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfT-Pc-4Hh">
+                                        <rect key="frame" x="324" y="44" width="51" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Update"/>
+                                        <connections>
+                                            <action selector="updateMemo" destination="9H0-qm-TJe" eventType="touchUpInside" id="AU1-EX-Mw4"/>
                                         </connections>
                                     </button>
                                 </subviews>
