@@ -177,9 +177,18 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
      ----- */
     @IBAction func updateMemo(){
         //新規作成後、既存メモを削除する
+        let tmpIndexPathRow = indexPathRow
         saveMemo()
-        print(indexPathRow)
+        indexPathRow = tmpIndexPathRow
         deleteMemo()
+        
+        //IndexPathRowを最新にする
+        let ud = UserDefaults.standard
+        
+        if ud.array(forKey: "memoArray") != nil {
+            let savedMemoArray = ud.array(forKey: "memoArray") as! [Dictionary<String,String>]
+            indexPathRow = savedMemoArray.count
+        }
     }
     
     /* -----
