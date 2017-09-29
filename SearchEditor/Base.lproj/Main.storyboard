@@ -23,9 +23,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMf-So-1WB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-847" y="136"/>
+            <point key="canvasLocation" x="-1577" y="134"/>
         </scene>
-        <!--Title-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SearchEditor" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,15 +37,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="doI-O8-Wid">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="y1W-vE-krF">
-                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="g5R-OL-XRs"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0h4-oj-GN1">
                                 <rect key="frame" x="0.0" y="624" width="375" height="43"/>
                                 <subviews>
@@ -96,10 +87,15 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0h4-oj-GN1" secondAttribute="bottom" id="yAx-Cp-1Hc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="K6u-bO-doe">
+                    <navigationItem key="navigationItem" id="K6u-bO-doe">
                         <barButtonItem key="leftBarButtonItem" title="メモ" id="YjH-Da-II4">
                             <connections>
                                 <segue destination="RzC-XF-a3O" kind="presentation" identifier="toMemo" id="WPO-ru-ffo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="編集" id="8Sx-Us-n3f">
+                            <connections>
+                                <segue destination="0Tv-N4-tlB" kind="presentation" modalTransitionStyle="crossDissolve" id="Scd-jN-dQY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -120,7 +116,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="93.599999999999994" y="135.38230884557723"/>
+            <point key="canvasLocation" x="-847" y="134"/>
         </scene>
         <!--Memo View Controller-->
         <scene sceneID="KdI-Wc-I1r">
@@ -174,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RMG-fe-yTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="94" y="887"/>
+            <point key="canvasLocation" x="94" y="906"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="Wy2-CG-qQK">
@@ -282,7 +278,135 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X0j-d4-dC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="925.60000000000002" y="136.28185907046478"/>
+            <point key="canvasLocation" x="878" y="134"/>
+        </scene>
+        <!--編集-->
+        <scene sceneID="RI3-pY-64I">
+            <objects>
+                <viewController id="jNl-tH-wHc" customClass="EditSitesViewController" customModule="SearchEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I55-NP-2xO"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ldi-Xn-A2p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hAY-5F-mJv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K39-gv-yPE">
+                                <rect key="frame" x="210" y="588" width="149" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="編集"/>
+                                <connections>
+                                    <segue destination="HLz-Kr-BN9" kind="show" id="mjR-gS-yeD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="編集" id="cyd-4p-iAF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="3vy-Mn-pLA">
+                            <connections>
+                                <action selector="back" destination="jNl-tH-wHc" id="Mzc-vY-PkW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="完了" id="372-eg-2PS"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="RkF-3z-mVQ" id="QwG-Vd-TSU"/>
+                    </connections>
+                </viewController>
+                <searchDisplayController id="Lp6-k4-jND">
+                    <connections>
+                        <outlet property="delegate" destination="jNl-tH-wHc" id="XBX-Go-h9T"/>
+                        <outlet property="searchContentsController" destination="jNl-tH-wHc" id="S56-mx-h5I"/>
+                        <outlet property="searchResultsDataSource" destination="jNl-tH-wHc" id="5aD-FW-iuh"/>
+                        <outlet property="searchResultsDelegate" destination="jNl-tH-wHc" id="5MT-zQ-80S"/>
+                    </connections>
+                </searchDisplayController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iC5-xX-mZA" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93.599999999999994" y="1602.5487256371816"/>
+        </scene>
+        <!--詳細-->
+        <scene sceneID="zgV-fs-gSS">
+            <objects>
+                <viewController id="HLz-Kr-BN9" customClass="EditSiteDetailViewController" customModule="SearchEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i58-PU-glK"/>
+                        <viewControllerLayoutGuide type="bottom" id="sg4-pw-kb3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rWe-9r-tor">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="タイトル" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M8U-wt-INm">
+                                <rect key="frame" x="31" y="284" width="312" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.84111066342330509" green="0.92305863314922743" blue="0.95597878886010368" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="24T-0O-gN6">
+                                <rect key="frame" x="31" y="333" width="312" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.84111066342330509" green="0.92305863314922743" blue="0.95597878886010368" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bf7-Vn-0Dw">
+                                <rect key="frame" x="107" y="103" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hge-nB-67P">
+                                <rect key="frame" x="275" y="233" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="編集"/>
+                                <connections>
+                                    <action selector="selectImage" destination="HLz-Kr-BN9" eventType="touchUpInside" id="IY4-0f-3Dc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="詳細" id="Hjj-BH-rhY">
+                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="b7t-gd-xik">
+                            <connections>
+                                <action selector="back" destination="HLz-Kr-BN9" id="Hmt-iq-7by"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="EF6-sG-hdI">
+                            <connections>
+                                <action selector="save" destination="HLz-Kr-BN9" id="O0r-xl-dJE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="siteImageView" destination="Bf7-Vn-0Dw" id="bAq-3z-KM2"/>
+                        <outlet property="titleTextField" destination="M8U-wt-INm" id="mHT-bE-BZ5"/>
+                        <outlet property="urlTextField" destination="24T-0O-gN6" id="3d0-Mo-c6c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hs5-2c-hFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="877.60000000000002" y="1602.5487256371816"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Clg-dA-Amc">
+            <objects>
+                <navigationController id="0Tv-N4-tlB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xKf-IK-Ymm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jNl-tH-wHc" kind="relationship" relationship="rootViewController" id="ZJZ-9d-gt5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P9I-g4-jMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1578" y="1603"/>
         </scene>
     </scenes>
     <resources>
@@ -290,6 +414,6 @@
         <image name="goo_logo.png" width="115" height="63"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xRT-x5-vA1"/>
+        <segue reference="YCV-t2-0pk"/>
     </inferredMetricsTieBreakers>
 </document>
