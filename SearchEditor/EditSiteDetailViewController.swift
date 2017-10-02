@@ -26,73 +26,82 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
     }
     
     @IBAction func save(){
-        //新規登録と更新で分ける
+        //TODO 新規登録と更新で分ける
+        
+        //フォームに入力された値
         let order = 0
         let inputTitleText = titleTextField.text
         let inputUrlText = urlTextField.text
         
-        
-        /* 編集中 */
-        //画像保存
+        /* ---
+         アイコン画像の保存
+        --- */
         let image = UIImage(named: "amazon_logo.png")!
         let siteImageData = UIImagePNGRepresentation(image)
         
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        let directoryName = "SearchEditor"
-        let siteImageName = "test"
-        let createPath = documentsPath + "/" + directoryName
+        let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let directoryName = "Sites"
+        let siteImageName = String(NSDate().timeIntervalSince1970) + ".png"
+        let saveFileName = directoryName + "/" + siteImageName
+        
+        //保存先表示
         print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!)
         
-        try! siteImageData?.write(to: URL(fileURLWithPath: createPath), options: [.atomic])
-
-//        if let dir = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
-//            
-//            let path_file_name = dir.appendingPathComponent( siteImageName )
-//            do {
-//                try siteImageData?.write( to: path_file_name, options: [.atomic] )
-//                
-//            } catch {                
-//                print("error")
-//            }
-//        }
+        //なければディレクトリSites作成
+        do {
+            try FileManager.default.createDirectory(atPath: documentDirectoryPath + "/" + directoryName, withIntermediateDirectories: false, attributes: nil)
+        } catch {
+            print(error)
+        }
         
-
+        //画像を保存する
+        if let directory = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
+            let saveFilePath = directory.appendingPathComponent(saveFileName)
+            
+            do {
+                try siteImageData?.write(to: saveFilePath, options: [.atomic])
+            } catch {
+                print(error)
+            }
+        }
+        
+        /* ---
+         サイト情報の保存
+        --- */
         let siteData = [
             "order": String(order),
             "title": inputTitleText!,
             "url": inputUrlText!,
-            "iconName": "goo_logo.pmg"
+            "iconPath": saveFileName
         ]
         
         //ユーザーデフォルトの領域を確保
         let ud = UserDefaults.standard
         
         //ユーザーデフォルトに一つでも保存されている値があったら
-        if ud.array(forKey: "sitesArray") != nil{
+        if ud.array(forKey: "siteArray") != nil{
             //OptionalからStringにダウンキャスト＆アンラップ
-            var saveSitesArray = ud.array(forKey: "sitesArray") as! [Dictionary<String,String>]
+            var saveSitesArray = ud.array(forKey: "siteArray") as! [Dictionary<String,String>]
             saveSitesArray.append(siteData)
-            ud.set(saveSitesArray, forKey: "sitesArray")
+            ud.set(saveSitesArray, forKey: "siteArray")
             
             //保存
             ud.synchronize()
             
-            //ユーザーデフォルトに何も保存されていない場合
+        //ユーザーデフォルトに何も保存されていない場合
         } else {
             var newSitesArray = [Dictionary<String,String>]()
             newSitesArray.append(siteData)
-            ud.set(newSitesArray, forKey: "sitesArray")
+            ud.set(newSitesArray, forKey: "siteArray")
             
             //保存
             ud.synchronize()
-            
         }
-
     }
     
     
     /* ---
-     画像選択
+     画像選択部分
     --- */
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage

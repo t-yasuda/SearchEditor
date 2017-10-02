@@ -8,11 +8,13 @@
 
 import UIKit
 
-class EditSitesViewController: UIViewController, UICollectionViewDataSource, SiteCollectionViewCellDelegate {
+class EditSitesViewController: UIViewController, UICollectionViewDataSource, SiteCollectionViewCellDelegate, UICollectionViewDelegate {
     
     @IBOutlet var siteCollectionView: UICollectionView!
         
     var siteDatas = [Dictionary<String,String>]()
+    
+    var selectedRow = 0
 
     //データの呼び出し
     func loadSite(){
@@ -20,6 +22,10 @@ class EditSitesViewController: UIViewController, UICollectionViewDataSource, Sit
         if ud.array(forKey: "SiteArray") != nil {
             //nilでないときだけ、Dictionaryとして取り出せる
             siteDatas = ud.array(forKey: "SiteArray") as! [Dictionary<String,String>]
+        } else {
+            siteDatas = [
+                ["icon": "noimage.jpg", "name": "サイトを新規登録する", "url": ""],
+            ]
         }
     }
     
@@ -30,7 +36,7 @@ class EditSitesViewController: UIViewController, UICollectionViewDataSource, Sit
         siteCollectionView.dataSource = self
         
         //デリゲートメソッドをselfに任せる
-        siteCollectionView.delegate = self as? UICollectionViewDelegate
+        siteCollectionView.delegate = self
 
         //カスタムセルの場合：カスタムセルの登録
         let nib = UINib(nibName: "SiteCollectionViewCell", bundle: Bundle.main)
@@ -53,6 +59,35 @@ class EditSitesViewController: UIViewController, UICollectionViewDataSource, Sit
         return cell
     }
 
+    /* -----
+     次の画面に値を渡すときに使う関数（メソッド）
+     ----- */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //新規登録時
+        if segue.identifier == "toAddSite" {
+            //次の画面のオブジェクトを取得
+            let editSiteDetailViewController = segue.destination as! EditSiteDetailViewController
+            
+        } else if segue.identifier == "toEditSite" {
+            
+            //次の画面の変数にこの画面の変数を入れている
+            //editSiteDetailViewController.passedId = siteDatas[selectedRow]["id"]
+            
+        }
+    }
+    
+    /* -----
+     セルが選択されたときに呼ばれるデリゲートメソッド
+     ----- */
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedUrl = siteDatas[indexPath.row]["url"]
+        if selectedUrl != nil {
+            selectedRow = indexPath.row
+            performSegue(withIdentifier: "toAddSite", sender: self)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

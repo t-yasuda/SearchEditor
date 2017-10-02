@@ -25,9 +25,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UICollectionViewDat
     //データの呼び出し
     func loadSite(){
         let ud = UserDefaults.standard
-        if ud.array(forKey: "SiteArray") != nil {
+        if ud.array(forKey: "siteArray") != nil {
             //nilでないときだけ、Dictionaryとして取り出せる
-            siteDatas = ud.array(forKey: "SiteArray") as! [Dictionary<String,String>]
+            siteDatas = ud.array(forKey: "siteArray") as! [Dictionary<String,String>]
         } else {
             siteDatas = [
                 ["icon": "goo_logo.png", "name": "goo", "url": "https://search.goo.ne.jp/web.jsp?MT=[QUERY]&IE=UTF-8&OE=UTF-8"],
@@ -68,13 +68,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UICollectionViewDat
     //2. CollectionViewに表示するデータの内容を決める
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SiteCell", for: indexPath) as! SiteCollectionViewCell
-        
-        cell.siteImageView.image = UIImage(named: siteDatas[indexPath.row]["icon"]!)
-        cell.siteLabel.text = siteDatas[indexPath.row]["name"]!
+
+        /*---
+         アイコン画像読み込み
+        ---*/
+        if siteDatas[indexPath.row].index(forKey: "iconPath") != nil {
+            if let directory = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
+                let loadFileName = siteDatas[indexPath.row]["iconPath"]
+                let loadFilePath = directory.appendingPathComponent(loadFileName!)
+                let image = UIImage(contentsOfFile: loadFilePath.path)
+                cell.siteImageView.image = image
+            }
+        }
+        cell.siteLabel.text = siteDatas[indexPath.row]["title"]!
         
         return cell
     }
-
     
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == self.queryField {

@@ -326,6 +326,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="HLz-Kr-BN9" kind="show" identifier="toAddSite" id="8su-Kv-eDc"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -441,5 +444,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="KP3-dL-0xL"/>
+        <segue reference="8su-Kv-eDc"/>
     </inferredMetricsTieBreakers>
 </document>
