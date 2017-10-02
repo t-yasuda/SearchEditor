@@ -25,6 +25,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     //トップ画面から渡された検索クエリ
     var passedQuery: String!
     
+    var passedSite: String!
+    
     var indexPathRow: Int!
     
     override func viewDidLoad() {
@@ -41,10 +43,18 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             showEditorField()
             editorField.text = passedMemo
             search_url = passedUrlFromMemo
+            
         } else {
             //トップ画面から検索クエリを渡された場合は検索を行う
             hideEditorField()
-            search_url = "https://search.goo.ne.jp/web.jsp?MT="+passedQuery+"&IE=UTF-8&OE=UTF-8"
+            
+            if passedSite != nil {
+                let search_url_splitted = passedSite.components(separatedBy: "[QUERY]")
+                search_url = search_url_splitted[0]+passedQuery+search_url_splitted[1]
+            } else {
+                search_url = "https://search.goo.ne.jp/web.jsp?MT="+passedQuery+"&IE=UTF-8&OE=UTF-8"
+            }
+            
         }
         
         search_url = search_url.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!

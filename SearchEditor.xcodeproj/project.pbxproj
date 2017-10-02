@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		06347FAA75C40410AB7CD9A4 /* Pods_SearchEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F138F35FFF3FA9763B7914 /* Pods_SearchEditor.framework */; };
 		AB04600A1F6685B6003572EF /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0460091F6685B6003572EF /* MemoViewController.swift */; };
+		AB05AA651F81C58B00733C84 /* SiteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB05AA631F81C58B00733C84 /* SiteCollectionViewCell.swift */; };
+		AB05AA661F81C58B00733C84 /* SiteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB05AA641F81C58B00733C84 /* SiteCollectionViewCell.xib */; };
 		AB2B9BE91F4D501D00C0D4FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2B9BE81F4D501D00C0D4FB /* AppDelegate.swift */; };
 		AB2B9BEB1F4D501D00C0D4FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2B9BEA1F4D501D00C0D4FB /* ViewController.swift */; };
 		AB2B9BEE1F4D501D00C0D4FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2B9BEC1F4D501D00C0D4FB /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		83F138F35FFF3FA9763B7914 /* Pods_SearchEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8478717D2665A10B118CB845 /* Pods-SearchEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchEditor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SearchEditor/Pods-SearchEditor.debug.xcconfig"; sourceTree = "<group>"; };
 		AB0460091F6685B6003572EF /* MemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		AB05AA631F81C58B00733C84 /* SiteCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB05AA641F81C58B00733C84 /* SiteCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SiteCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB2B9BE51F4D501D00C0D4FB /* SearchEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2B9BE81F4D501D00C0D4FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB2B9BEA1F4D501D00C0D4FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 			children = (
 				AB2B9BE81F4D501D00C0D4FB /* AppDelegate.swift */,
 				AB2B9BEA1F4D501D00C0D4FB /* ViewController.swift */,
+				AB05AA631F81C58B00733C84 /* SiteCollectionViewCell.swift */,
+				AB05AA641F81C58B00733C84 /* SiteCollectionViewCell.xib */,
 				AB2B9BEC1F4D501D00C0D4FB /* Main.storyboard */,
 				AB4EB4441F67694C00B2F73E /* MemoTableViewCell.swift */,
 				AB4EB4451F67694C00B2F73E /* MemoTableViewCell.xib */,
@@ -274,6 +280,7 @@
 				AB7602231F67E2A400B9D058 /* Icon-App-83.5x83.5@2x.png in Resources */,
 				AB7602211F67E2A400B9D058 /* Icon-App-76x76@2x.png in Resources */,
 				AB7602201F67E2A400B9D058 /* Icon-App-76x76@1x.png in Resources */,
+				AB05AA661F81C58B00733C84 /* SiteCollectionViewCell.xib in Resources */,
 				AB76021F1F67E2A400B9D058 /* Icon-App-72x72@2x.png in Resources */,
 				AB7602241F67E2A400B9D058 /* Icon-Small-50x50@1x.png in Resources */,
 				AB76021C1F67E2A400B9D058 /* Icon-App-60x60@2x.png in Resources */,
@@ -353,6 +360,7 @@
 				ABC2C9191F7B809A00EB6C59 /* EditSiteDetailViewController.swift in Sources */,
 				AB4EB4461F67694C00B2F73E /* MemoTableViewCell.swift in Sources */,
 				ABC2C9171F7B7B5700EB6C59 /* EditSitesViewController.swift in Sources */,
+				AB05AA651F81C58B00733C84 /* SiteCollectionViewCell.swift in Sources */,
 				AB04600A1F6685B6003572EF /* MemoViewController.swift in Sources */,
 				AB6789B61F4ED4F200F232EF /* SearchViewController.swift in Sources */,
 				AB2B9BEB1F4D501D00C0D4FB /* ViewController.swift in Sources */,

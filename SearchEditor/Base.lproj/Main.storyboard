@@ -59,26 +59,33 @@
                                     <constraint firstAttribute="bottom" secondItem="gzb-jj-VHT" secondAttribute="bottom" constant="10" id="gnA-i5-NAo"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goo_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="njg-za-YQF">
-                                <rect key="frame" x="16" y="87" width="80" height="80"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v7x-Pd-sFX">
+                                <rect key="frame" x="8" y="72" width="359" height="294"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87313966155787215" green="0.90539993523316065" blue="0.88519609425332302" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="amazon_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="cVn-KC-Dlz">
-                                <rect key="frame" x="104" y="87" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87313966160000001" green="0.90539993519999995" blue="0.88519609430000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wP6-ab-Axp">
-                                <rect key="frame" x="192" y="87" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87313966160000001" green="0.90539993519999995" blue="0.88519609430000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibO-sO-NWs">
-                                <rect key="frame" x="280" y="87" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87313966160000001" green="0.90539993519999995" blue="0.88519609430000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tCl-YD-Y8n">
+                                    <size key="itemSize" width="80" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SiteCell" id="Zub-Uk-un4">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="9H0-qm-TJe" kind="presentation" identifier="toSearchWithSiteUrl" id="KP3-dL-0xL"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xpg-8x-DgH"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -103,6 +110,7 @@
                         <outlet property="avoidingView" destination="0h4-oj-GN1" id="AM7-9Z-AcX"/>
                         <outlet property="queryField" destination="gzb-jj-VHT" id="2cp-Sa-FPj"/>
                         <outlet property="searchDisplayController" destination="RkF-3z-mVQ" id="Of7-SQ-CQZ"/>
+                        <outlet property="siteCollectionView" destination="v7x-Pd-sFX" id="pcX-43-l6t"/>
                         <segue destination="9H0-qm-TJe" kind="presentation" identifier="toSearch" animates="NO" modalTransitionStyle="crossDissolve" id="xRT-x5-vA1"/>
                     </connections>
                 </viewController>
@@ -116,7 +124,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-847" y="134"/>
+            <point key="canvasLocation" x="-847.20000000000005" y="133.5832083958021"/>
         </scene>
         <!--Memo View Controller-->
         <scene sceneID="KdI-Wc-I1r">
@@ -300,6 +308,27 @@
                                     <segue destination="HLz-Kr-BN9" kind="show" id="mjR-gS-yeD"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uRc-f5-IRw">
+                                <rect key="frame" x="8" y="72" width="359" height="520"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="krm-ms-9Hc">
+                                    <size key="itemSize" width="80" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SiteCell" id="vy9-AE-5EB">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -313,6 +342,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="RkF-3z-mVQ" id="QwG-Vd-TSU"/>
+                        <outlet property="siteCollectionView" destination="uRc-f5-IRw" id="Jbc-V0-dIT"/>
                     </connections>
                 </viewController>
                 <searchDisplayController id="Lp6-k4-jND">
@@ -409,11 +439,7 @@
             <point key="canvasLocation" x="-1578" y="1603"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="amazon_logo.png" width="426" height="426"/>
-        <image name="goo_logo.png" width="115" height="63"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YCV-t2-0pk"/>
+        <segue reference="KP3-dL-0xL"/>
     </inferredMetricsTieBreakers>
 </document>
