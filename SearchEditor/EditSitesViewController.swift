@@ -19,12 +19,13 @@ class EditSitesViewController: UIViewController, UICollectionViewDataSource, Sit
     //データの呼び出し
     func loadSite(){
         let ud = UserDefaults.standard
-        if ud.array(forKey: "SiteArray") != nil {
+        if ud.array(forKey: "siteArray") != nil {
             //nilでないときだけ、Dictionaryとして取り出せる
-            siteDatas = ud.array(forKey: "SiteArray") as! [Dictionary<String,String>]
+            siteDatas = ud.array(forKey: "siteArray") as! [Dictionary<String,String>]
+            siteDatas.append(["title": "サイトを新規登録する", "url": ""])
         } else {
             siteDatas = [
-                ["icon": "noimage.jpg", "name": "サイトを新規登録する", "url": ""],
+                ["title": "サイトを新規登録する", "url": ""],
             ]
         }
     }
@@ -52,9 +53,19 @@ class EditSitesViewController: UIViewController, UICollectionViewDataSource, Sit
     //2. CollectionViewに表示するデータの内容を決める
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SiteCell", for: indexPath) as! SiteCollectionViewCell
-        
-        cell.siteImageView.image = UIImage(named: siteDatas[indexPath.row]["icon"]!)
-        cell.siteLabel.text = siteDatas[indexPath.row]["name"]!
+
+        /*---
+         アイコン画像読み込み
+         ---*/
+        if siteDatas[indexPath.row].index(forKey: "iconPath") != nil {
+            if let directory = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
+                let loadFileName = siteDatas[indexPath.row]["iconPath"]
+                let loadFilePath = directory.appendingPathComponent(loadFileName!)
+                let image = UIImage(contentsOfFile: loadFilePath.path)
+                cell.siteImageView.image = image
+            }
+        }
+        cell.siteLabel.text = siteDatas[indexPath.row]["title"]!
         
         return cell
     }
