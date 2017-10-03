@@ -155,6 +155,7 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
             ud.synchronize()
 
         }
+        back()
     }
     
     
@@ -163,11 +164,11 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
         if passedSiteData != nil{
             createSite()
             deleteSite()
+            back()
         } else {
             createSite()
+            back()
         }
-        
-        back()
     }
     
     
@@ -175,7 +176,7 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
      画像選択部分
     --- */
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
         siteImageView.image = selectedImage
         
         picker.dismiss(animated: true, completion: nil)
