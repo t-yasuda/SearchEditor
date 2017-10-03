@@ -45,6 +45,7 @@
 		AB7602241F67E2A400B9D058 /* Icon-Small-50x50@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB76020E1F67E2A400B9D058 /* Icon-Small-50x50@1x.png */; };
 		AB7602251F67E2A400B9D058 /* Icon-Small-50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB76020F1F67E2A400B9D058 /* Icon-Small-50x50@2x.png */; };
 		AB794E801F56935600325804 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB794E7F1F56935600325804 /* background.jpg */; };
+		ABB3B9E61F83CAE50062CE13 /* addIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB3B9E51F83CAE50062CE13 /* addIcon.png */; };
 		ABC2C9171F7B7B5700EB6C59 /* EditSitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2C9161F7B7B5700EB6C59 /* EditSitesViewController.swift */; };
 		ABC2C9191F7B809A00EB6C59 /* EditSiteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2C9181F7B809A00EB6C59 /* EditSiteDetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		AB76020E1F67E2A400B9D058 /* Icon-Small-50x50@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50x50@1x.png"; sourceTree = "<group>"; };
 		AB76020F1F67E2A400B9D058 /* Icon-Small-50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50x50@2x.png"; sourceTree = "<group>"; };
 		AB794E7F1F56935600325804 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		ABB3B9E51F83CAE50062CE13 /* addIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addIcon.png; sourceTree = "<group>"; };
 		ABC2C9161F7B7B5700EB6C59 /* EditSitesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSitesViewController.swift; sourceTree = "<group>"; };
 		ABC2C9181F7B809A00EB6C59 /* EditSiteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSiteDetailViewController.swift; sourceTree = "<group>"; };
 		D0D5381CCCD61DDB025D91EE /* Pods-SearchEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchEditor.release.xcconfig"; path = "Pods/Target Support Files/Pods-SearchEditor/Pods-SearchEditor.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				AB7601F91F67E27000B9D058 /* icon */,
 				AB7601F71F677D9300B9D058 /* noimage.jpg */,
+				ABB3B9E51F83CAE50062CE13 /* addIcon.png */,
 				AB58D0301F68E86100297375 /* amazon_logo.png */,
 				AB58D02E1F68E7EE00297375 /* goo_logo.png */,
 				AB794E7F1F56935600325804 /* background.jpg */,
@@ -284,6 +287,7 @@
 				AB76021F1F67E2A400B9D058 /* Icon-App-72x72@2x.png in Resources */,
 				AB7602241F67E2A400B9D058 /* Icon-Small-50x50@1x.png in Resources */,
 				AB76021C1F67E2A400B9D058 /* Icon-App-60x60@2x.png in Resources */,
+				ABB3B9E61F83CAE50062CE13 /* addIcon.png in Resources */,
 				AB7602141F67E2A400B9D058 /* Icon-App-29x29@2x.png in Resources */,
 				AB76021B1F67E2A400B9D058 /* Icon-App-60x60@1x.png in Resources */,
 				AB76021D1F67E2A400B9D058 /* Icon-App-60x60@3x.png in Resources */,

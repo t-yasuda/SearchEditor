@@ -12,6 +12,19 @@ class MemoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var memoDatas = [Dictionary<String,String>]()
     
+    /*---
+     背景画像読み込み
+     ---*/
+    func loadBackground(){
+        if let directory = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
+            let loadFilePath = directory.appendingPathComponent("Settings/background.png")
+            let image = UIImage(contentsOfFile: loadFilePath.path)
+            if image != nil{
+                self.view.backgroundColor = UIColor(patternImage: image!)
+            }
+        }
+    }
+    
     //データの呼び出し
     func loadMemo(){
         //ud読み込み
@@ -87,6 +100,8 @@ class MemoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //画面が表示される時
     override func viewWillAppear(_ animated: Bool) {
+        loadBackground()
+        
         //データの呼び出し
         loadMemo()
         memoTableView.reloadData()

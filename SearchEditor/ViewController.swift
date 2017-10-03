@@ -16,6 +16,19 @@ class ViewController: UIViewController, UITextFieldDelegate, UICollectionViewDat
     @IBOutlet var queryField: UITextField!
     
     var selectedRow = 0
+
+    /*---
+     背景画像読み込み
+     ---*/
+    func loadBackground(){
+        if let directory = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
+            let loadFilePath = directory.appendingPathComponent("Settings/background.png")
+            let image = UIImage(contentsOfFile: loadFilePath.path)
+            if image != nil{
+            self.view.backgroundColor = UIColor(patternImage: image!)
+            }
+        }
+    }
         
     /* ---
      登録サイト
@@ -38,6 +51,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UICollectionViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //背景画像指定
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named:"background.jpg")!)
         
@@ -103,6 +117,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UICollectionViewDat
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        loadBackground()
+
         //データの呼び出し
         loadSite()
         siteCollectionView.reloadData()

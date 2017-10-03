@@ -29,6 +29,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     var indexPathRow: Int!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         indexPathRow = passedIndexPathRow

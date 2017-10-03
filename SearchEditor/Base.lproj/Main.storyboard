@@ -40,7 +40,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v7x-Pd-sFX">
                                 <rect key="frame" x="8" y="8" width="359" height="608"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tCl-YD-Y8n">
                                     <size key="itemSize" width="80" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -301,9 +301,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uRc-f5-IRw">
-                                <rect key="frame" x="8" y="8" width="359" height="659"/>
+                                <rect key="frame" x="8" y="8" width="359" height="615"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="krm-ms-9Hc">
                                     <size key="itemSize" width="80" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -318,12 +318,42 @@
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
+                                        <gestureRecognizers/>
                                         <connections>
+                                            <outletCollection property="gestureRecognizers" destination="1sQ-vG-sOu" appends="YES" id="Jge-qP-CRx"/>
                                             <segue destination="HLz-Kr-BN9" kind="show" identifier="toEditSite" id="8su-Kv-eDc"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBW-eQ-LWL">
+                                <rect key="frame" x="21" y="485" width="333" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87505454823630291" green="0.82807252880883198" blue="0.9358740482233503" alpha="0.4552386558219178" colorSpace="custom" customColorSpace="displayP3"/>
+                                <gestureRecognizers/>
+                                <string key="text">アイコンをタップすると編集画面へ移動します
+順番を入れ替えることも可能です</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.41612178909999997" green="0.41338027360000001" blue="0.4701320792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SXI-Qe-Yyi">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="背景" id="nNe-cz-DOd">
+                                        <connections>
+                                            <action selector="selectBackgroundImage" destination="jNl-tH-wHc" id="8Oe-tq-NxU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="OWa-8R-fyD"/>
+                                    <barButtonItem title="並び替え完了" id="372-eg-2PS">
+                                        <connections>
+                                            <action selector="updateOrder" destination="jNl-tH-wHc" id="JM0-aI-WiQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -333,7 +363,11 @@
                                 <action selector="back" destination="jNl-tH-wHc" id="Mzc-vY-PkW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="完了" id="372-eg-2PS"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gwm-oB-FJ6">
+                            <connections>
+                                <action selector="addSite" destination="jNl-tH-wHc" id="ZEi-en-ciO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="RkF-3z-mVQ" id="QwG-Vd-TSU"/>
@@ -349,6 +383,7 @@
                     </connections>
                 </searchDisplayController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iC5-xX-mZA" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="1sQ-vG-sOu"/>
             </objects>
             <point key="canvasLocation" x="93.599999999999994" y="1602.5487256371816"/>
         </scene>

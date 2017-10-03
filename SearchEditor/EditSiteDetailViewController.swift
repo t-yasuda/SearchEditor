@@ -23,6 +23,19 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
     
     var selectedImage = UIImage(named: "noimage.jpg")
     
+    /*---
+     背景画像読み込み
+     ---*/
+    func loadBackground(){
+        if let directory = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
+            let loadFilePath = directory.appendingPathComponent("Settings/background.png")
+            let image = UIImage(contentsOfFile: loadFilePath.path)
+            if image != nil{
+                self.view.backgroundColor = UIColor(patternImage: image!)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,7 +69,7 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+        
     @IBAction func createSite(){
         //フォームに入力された値
         let order = 0
@@ -183,7 +196,6 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
         
     }
     
-    
     @IBAction func selectImage(){
         let actionController = UIAlertController(title: "画像の選択", message: "選択して下さい", preferredStyle: .actionSheet)
         let cameraAction = UIAlertAction(title: "カメラ", style: .default) { (action) in
@@ -215,6 +227,10 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
         actionController.addAction(albumAction)
         actionController.addAction(cancelAction)
         self.present(actionController, animated: true, completion: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadBackground()
     }
     
     
