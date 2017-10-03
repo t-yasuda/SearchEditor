@@ -154,12 +154,12 @@
 				AB2B9BEC1F4D501D00C0D4FB /* Main.storyboard */,
 				AB4EB4441F67694C00B2F73E /* MemoTableViewCell.swift */,
 				AB4EB4451F67694C00B2F73E /* MemoTableViewCell.xib */,
-				ABC2C9161F7B7B5700EB6C59 /* EditSitesViewController.swift */,
 				AB0460091F6685B6003572EF /* MemoViewController.swift */,
 				AB2B9BEF1F4D501D00C0D4FB /* Assets.xcassets */,
 				AB2B9BF11F4D501D00C0D4FB /* LaunchScreen.storyboard */,
 				AB2B9BF41F4D501D00C0D4FB /* Info.plist */,
 				AB6789B51F4ED4F200F232EF /* SearchViewController.swift */,
+				ABC2C9161F7B7B5700EB6C59 /* EditSitesViewController.swift */,
 				ABC2C9181F7B809A00EB6C59 /* EditSiteDetailViewController.swift */,
 			);
 			path = SearchEditor;

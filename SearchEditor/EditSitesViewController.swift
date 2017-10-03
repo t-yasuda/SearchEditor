@@ -13,8 +13,8 @@ class EditSitesViewController: UIViewController, UICollectionViewDataSource, Sit
     @IBOutlet var siteCollectionView: UICollectionView!
         
     var siteDatas = [Dictionary<String,String>]()
-    
-    var selectedRow = 0
+    var selectedRow: Int!
+    var selectedSiteData: Dictionary<String, Any>!
 
     //データの呼び出し
     func loadSite(){
@@ -22,10 +22,10 @@ class EditSitesViewController: UIViewController, UICollectionViewDataSource, Sit
         if ud.array(forKey: "siteArray") != nil {
             //nilでないときだけ、Dictionaryとして取り出せる
             siteDatas = ud.array(forKey: "siteArray") as! [Dictionary<String,String>]
-            siteDatas.append(["title": "サイトを新規登録する", "url": ""])
+            siteDatas.append(["title": "サイトを新規登録する"])
         } else {
             siteDatas = [
-                ["title": "サイトを新規登録する", "url": ""],
+                ["title": "サイトを新規登録する"],
             ]
         }
     }
@@ -75,14 +75,16 @@ class EditSitesViewController: UIViewController, UICollectionViewDataSource, Sit
      ----- */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //新規登録時
-        if segue.identifier == "toAddSite" {
+        if segue.identifier == "toEditSite" {
             //次の画面のオブジェクトを取得
             let editSiteDetailViewController = segue.destination as! EditSiteDetailViewController
-            
-        } else if segue.identifier == "toEditSite" {
-            
+
             //次の画面の変数にこの画面の変数を入れている
-            //editSiteDetailViewController.passedId = siteDatas[selectedRow]["id"]
+            editSiteDetailViewController.passedRow = selectedRow
+            editSiteDetailViewController.passedSiteData = selectedSiteData
+            
+        } else if segue.identifier == "toAddSite" {
+            
             
         }
     }
@@ -95,8 +97,9 @@ class EditSitesViewController: UIViewController, UICollectionViewDataSource, Sit
         let selectedUrl = siteDatas[indexPath.row]["url"]
         if selectedUrl != nil {
             selectedRow = indexPath.row
-            performSegue(withIdentifier: "toAddSite", sender: self)
+            selectedSiteData = siteDatas[indexPath.row]
         }
+        performSegue(withIdentifier: "toEditSite", sender: self)
     }
     
     override func didReceiveMemoryWarning() {

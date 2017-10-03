@@ -14,12 +14,36 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var urlTextField: UITextField!
     
+    //渡された変数
+    var passedRow: Int!
+    var passedSiteData: Dictionary<String, Any>!
+    
     var selectedImage = UIImage(named: "noimage.jpg")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //画像の読み込み
+        //新規登録と更新で分ける
+        if passedSiteData != nil{
+            //更新の場合フォームを埋める
+
+            /*--- アイコン画像読み込み ---*/
+            if passedSiteData["iconPath"] != nil {
+                if let directory = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
+                    let loadFileName = passedSiteData["iconPath"]
+                    let loadFilePath = directory.appendingPathComponent(loadFileName! as! String)
+                    let image = UIImage(contentsOfFile: loadFilePath.path)
+                    siteImageView.image = image
+                    selectedImage = image
+                }
+            }
+            titleTextField.text = passedSiteData["title"] as? String
+            urlTextField.text = passedSiteData["url"] as? String
+            
+        } else {
+            //新規の場合は何もしない
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,9 +51,7 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func save(){
-        //TODO 新規登録と更新で分ける
-        
+    @IBAction func createSite(){
         //フォームに入力された値
         let order = 0
         let inputTitleText = titleTextField.text
@@ -37,7 +59,7 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
         
         /* ---
          アイコン画像の保存
-        --- */
+         --- */
         let siteImageData = UIImagePNGRepresentation(selectedImage!)
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let directoryName = "Sites"
@@ -67,7 +89,7 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
         
         /* ---
          サイト情報の保存
-        --- */
+         --- */
         let siteData = [
             "order": String(order),
             "title": inputTitleText!,
@@ -88,7 +110,7 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
             //保存
             ud.synchronize()
             
-        //ユーザーデフォルトに何も保存されていない場合
+            //ユーザーデフォルトに何も保存されていない場合
         } else {
             var newSitesArray = [Dictionary<String,String>]()
             newSitesArray.append(siteData)
@@ -97,6 +119,49 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
             //保存
             ud.synchronize()
         }
+    }
+    
+    @IBAction func deleteSite(){
+        //TODO: アラート
+        let ud = UserDefaults.standard
+        
+        if ud.array(forKey: "siteArray") != nil {
+            //保存していたメモの配列
+            var savedSiteArray = ud.array(forKey: "siteArray") as! [Dictionary<String, String>]
+            
+            //アイコンも削除
+            if savedSiteArray[passedRow].index(forKey: "iconPath") != nil {
+                if let directory = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
+                    let savedFileName = savedSiteArray[passedRow]["iconPath"]
+                    let savedFilePath = directory.appendingPathComponent(savedFileName!).path
+                    do {
+                        try FileManager.default.removeItem(atPath: savedFilePath)
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            
+            //押されたrowの削除
+            savedSiteArray.remove(at: passedRow)
+            //保存し直す
+            ud.set(savedSiteArray, forKey: "siteArray")
+            ud.synchronize()
+
+        }
+    }
+    
+    
+    @IBAction func save(){
+        //新規登録と更新で分ける
+        if passedSiteData != nil{
+            createSite()
+            deleteSite()
+        } else {
+            createSite()
+        }
+        
+        back()
     }
     
     
@@ -147,7 +212,7 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
     
     
     @IBAction func back(){
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 
 
