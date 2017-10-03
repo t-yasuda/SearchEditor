@@ -32,6 +32,8 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
             let image = UIImage(contentsOfFile: loadFilePath.path)
             if image != nil{
                 self.view.backgroundColor = UIColor(patternImage: image!)
+            } else {
+                self.view.backgroundColor = UIColor.white
             }
         }
     }
