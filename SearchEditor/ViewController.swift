@@ -38,7 +38,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UICollectionViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //背景画像指定
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named:"background.jpg")!)
         
@@ -104,6 +103,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UICollectionViewDat
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //データの呼び出し
+        loadSite()
+        siteCollectionView.reloadData()
+
         //キーボード
         queryField.returnKeyType = UIReturnKeyType.search
         queryField.becomeFirstResponder()

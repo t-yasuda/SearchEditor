@@ -14,6 +14,9 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var urlTextField: UITextField!
     
+    @IBOutlet var deleteButton: UIButton!
+    
+    
     //渡された変数
     var passedRow: Int!
     var passedSiteData: Dictionary<String, Any>!
@@ -40,8 +43,11 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
             titleTextField.text = passedSiteData["title"] as? String
             urlTextField.text = passedSiteData["url"] as? String
             
+            deleteButton.isEnabled = true
+            
         } else {
-            //新規の場合は何もしない
+            //新規の場合は削除ボタンを消す
+            deleteButton.isEnabled = false
         }
         
     }

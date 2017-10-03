@@ -113,5 +113,14 @@ class EditSitesViewController: UIViewController, UICollectionViewDataSource, Sit
     func didTapDelegate(){
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        selectedSiteData = nil
+        
+        //データの呼び出し
+        loadSite()
+        siteCollectionView.reloadData()
+    }
+
 
 }

@@ -421,6 +421,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="deleteButton" destination="Qkd-zs-Ibt" id="7Ga-Oy-i0g"/>
                         <outlet property="siteImageView" destination="Bf7-Vn-0Dw" id="bAq-3z-KM2"/>
                         <outlet property="titleTextField" destination="M8U-wt-INm" id="mHT-bE-BZ5"/>
                         <outlet property="urlTextField" destination="24T-0O-gN6" id="3d0-Mo-c6c"/>
