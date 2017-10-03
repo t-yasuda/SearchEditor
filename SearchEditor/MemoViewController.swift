@@ -11,6 +11,7 @@ import UIKit
 class MemoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MemoTableViewCellDelegate {
     
     var memoDatas = [Dictionary<String,String>]()
+    
     //データの呼び出し
     func loadMemo(){
         //ud読み込み
@@ -59,10 +60,22 @@ class MemoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemoCell", for: indexPath as IndexPath) as! MemoTableViewCell
         
+        /*---
+         アイコン画像読み込み
+         ---*/
+        if memoDatas[indexPath.row].index(forKey: "thumbnailPath") != nil {
+            if let directory = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
+                let loadFileName = memoDatas[indexPath.row]["thumbnailPath"]
+                let loadFilePath = directory.appendingPathComponent(loadFileName!)
+                let image = UIImage(contentsOfFile: loadFilePath.path)
+                cell.memoImageView.image = image
+            }
+        }
+        
         //表示内容を決める
-        cell.memoImageView.image = UIImage(named: memoDatas[indexPath.row]["image"]!)
         cell.memoUpdatedDateTimeLabel.text = memoDatas[indexPath.row]["updatedDateTime"]
         cell.memoUrlLabel.text = memoDatas[indexPath.row]["url"]
+        cell.memoTitleLabel.text = memoDatas[indexPath.row]["title"]
         cell.memoSummaryLabel.text = memoDatas[indexPath.row]["summary"]
         cell.deleteMemoButton.tag = indexPath.row
         

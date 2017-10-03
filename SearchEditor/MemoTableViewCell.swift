@@ -22,6 +22,8 @@ class MemoTableViewCell: UITableViewCell {
     
     @IBOutlet var memoUrlLabel :UILabel!
     
+    @IBOutlet var memoTitleLabel :UILabel!
+    
     @IBOutlet var memoSummaryLabel :UILabel!
     
     @IBOutlet var deleteMemoButton: UIButton!
@@ -44,6 +46,20 @@ class MemoTableViewCell: UITableViewCell {
          if ud.array(forKey: "memoArray") != nil {
             //保存していたメモの配列
             var savedMemoArray = ud.array(forKey: "memoArray") as! [Dictionary<String, String>]
+            
+            //キャプチャも削除
+            if savedMemoArray[sender.tag].index(forKey: "thumbnailPath") != nil {
+                if let directory = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
+                    let savedFileName = savedMemoArray[sender.tag]["thumbnailPath"]
+                    let savedFilePath = directory.appendingPathComponent(savedFileName!).path
+                    do {
+                        try FileManager.default.removeItem(atPath: savedFilePath)
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            
             //押されたrowの削除
             savedMemoArray.remove(at: sender.tag)
             //保存し直す

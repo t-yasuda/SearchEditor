@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,19 +19,39 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BtU-7h-0XO">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="noimage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="BtU-7h-0XO">
                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="BtU-7h-0XO" secondAttribute="height" multiplier="1:1" id="oVM-L1-crP"/>
+                            <constraint firstAttribute="width" constant="80" id="u37-Mf-Qpb"/>
+                            <constraint firstAttribute="height" constant="80" id="xTv-RS-Z0U"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="87h-Ct-nEZ">
-                        <rect key="frame" x="88" y="29" width="233" height="51"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="87h-Ct-nEZ">
+                        <rect key="frame" x="88" y="43" width="233" height="37"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <attributedString key="attributedText">
                             <fragment content="詳細">
                                 <attributes>
                                     <font key="NSFont" size="14" name=".HiraKakuInterface-W3"/>
                                     <font key="NSOriginalFont" size="14" name=".AppleSystemUIFont"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                            <fragment>
+                                <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                <attributes>
+                                    <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="メモ">
+                                <attributes>
+                                    <font key="NSFont" size="14" name=".HiraKakuInterface-W3"/>
+                                    <font key="NSOriginalFont" size="14" name=".AppleSystemUIFont"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
@@ -59,16 +80,31 @@
                             <action selector="deleteMemoWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HuO-Oa-zht"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タイトル" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UX-Pu-p5A">
+                        <rect key="frame" x="88" y="29" width="233" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                        <color key="textColor" red="0.59533768799999998" green="0.53103416219999999" blue="0.68796551169999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="BtU-7h-0XO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="La2-gc-eEL"/>
+                    <constraint firstAttribute="bottom" secondItem="BtU-7h-0XO" secondAttribute="bottom" id="bT3-yc-ybv"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="deleteMemoButton" destination="4cz-5n-XaD" id="dwo-8h-57K"/>
                 <outlet property="memoImageView" destination="BtU-7h-0XO" id="GO8-qu-kcG"/>
                 <outlet property="memoSummaryLabel" destination="87h-Ct-nEZ" id="za2-Ud-IVX"/>
+                <outlet property="memoTitleLabel" destination="9UX-Pu-p5A" id="0qL-sa-Zwj"/>
                 <outlet property="memoUpdatedDateTimeLabel" destination="Xhb-yk-5vI" id="DYo-NB-3Nf"/>
                 <outlet property="memoUrlLabel" destination="ReR-fK-YMT" id="cIR-eH-RF9"/>
             </connections>
-            <point key="canvasLocation" x="-93" y="52"/>
+            <point key="canvasLocation" x="-93.5" y="52"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="noimage.jpg" width="250" height="250"/>
+    </resources>
 </document>

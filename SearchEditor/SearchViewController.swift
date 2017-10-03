@@ -49,8 +49,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             hideEditorField()
             
             if passedSite != nil {
-                let search_url_splitted = passedSite.components(separatedBy: "[QUERY]")
-                search_url = search_url_splitted[0]+passedQuery+search_url_splitted[1]
+                if passedSite.contains("[QUERY]") {
+                    let search_url_splitted = passedSite.components(separatedBy: "[QUERY]")
+                    search_url = search_url_splitted[0]+passedQuery+search_url_splitted[1]
+                } else {
+                    search_url = "https://search.goo.ne.jp/web.jsp?MT="+passedQuery+"&IE=UTF-8&OE=UTF-8"
+                }
             } else {
                 search_url = "https://search.goo.ne.jp/web.jsp?MT="+passedQuery+"&IE=UTF-8&OE=UTF-8"
             }
@@ -89,6 +93,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
      ----- */
     @IBAction func hideEditorField(){
         avoidingView.isHidden = true
+        editorField.resignFirstResponder()
     }
     
     @IBAction func showEditorField(){
@@ -110,8 +115,74 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     /* -----
      メモを保存する
     ----- */
+    func generateThumbnail(image :UIImage) ->UIImage {
+        let navigationBarHeight = UINavigationController().navigationBar.frame.size.height
+        let statusBarHeight     = UIApplication.shared.statusBarFrame.size.height
+        let ignoredHeight       = (statusBarHeight + navigationBarHeight) * 2 //TODO: なぜ？
+        
+        let screenshot       = image.cgImage
+        let screenshotWidth  = Int(screenshot!.width)
+        
+        let rect  = CGRect.init(x: 0, y: ignoredHeight, width: CGFloat(screenshotWidth), height: CGFloat(screenshotWidth))
+        let cropped = image.cgImage!.cropping(to: rect)
+        let croppedImage = UIImage(cgImage: cropped!)
+        
+        UIGraphicsBeginImageContext(CGSize.init(width: CGFloat(160), height: CGFloat(160)))
+        croppedImage.draw(in: CGRect.init(x: 0, y: 0, width: CGFloat(160), height: CGFloat(160)))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return resizedImage!
+    }
+    
     @IBAction func saveMemo(){
-        let image = "noimage.jpg"
+        //メモ入力フィールドを引っ込める
+        hideEditorField()
+        
+        /*---
+         キャプチャ保存
+         ---*/
+        let layer = UIApplication.shared.keyWindow?.layer
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions((layer?.frame.size)!, false, scale);
+        
+        layer?.render(in: UIGraphicsGetCurrentContext()!)
+        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext();
+        
+        let screenshotResized = generateThumbnail(image:screenshot!)
+        
+        let screenshotData = UIImagePNGRepresentation(screenshotResized)
+        let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let directoryName = "Memos"
+        let siteImageName = String(NSDate().timeIntervalSince1970) + ".png"
+        let saveFileName = directoryName + "/" + siteImageName
+        
+        //保存先表示
+        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!)
+        
+        //なければディレクトリMemos作成
+        do {
+            try FileManager.default.createDirectory(atPath: documentDirectoryPath + "/" + directoryName, withIntermediateDirectories: false, attributes: nil)
+        } catch {
+            print(error)
+        }
+        
+        //画像を保存する
+        if let directory = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
+            let saveFilePath = directory.appendingPathComponent(saveFileName)
+            
+            do {
+                try screenshotData?.write(to: saveFilePath, options: [.atomic])
+            } catch {
+                print(error)
+            }
+        }
+        
+        /*---
+         メモ本文保存
+        ---*/
+        //let image = "noimage.jpg"
 
         let date = Date()
         
@@ -120,13 +191,15 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         let now = formatter.string(from: date)
 
         let url = webView.stringByEvaluatingJavaScript(from: "document.URL")!
+        let title = webView.stringByEvaluatingJavaScript(from: "document.title")!
         
         let inputText = editorField.text
         
         let memoData = [
-            "image": image,
+            "thumbnailPath": saveFileName,
             "updatedDateTime": now,
             "url": url,
+            "title": title,
             "summary": inputText!,
         ]
         
@@ -159,6 +232,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
     }
     
+    
     /* -----
      メモを削除する
      ----- */
@@ -169,8 +243,23 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         if ud.array(forKey: "memoArray") != nil {
             //保存していたメモの配列
             var savedMemoArray = ud.array(forKey: "memoArray") as! [Dictionary<String, String>]
+
+            //キャプチャも削除
+            if savedMemoArray[indexPathRow].index(forKey: "thumbnailPath") != nil {
+                if let directory = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
+                    let savedFileName = savedMemoArray[indexPathRow]["thumbnailPath"]
+                    let savedFilePath = directory.appendingPathComponent(savedFileName!).path
+                    do {
+                        try FileManager.default.removeItem(atPath: savedFilePath)
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+
             //押されたrowの削除
             savedMemoArray.remove(at: indexPathRow)
+            
             //保存し直す
             ud.set(savedMemoArray, forKey: "memoArray")
             ud.synchronize()
