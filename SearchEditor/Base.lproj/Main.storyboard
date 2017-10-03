@@ -37,30 +37,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0h4-oj-GN1">
-                                <rect key="frame" x="0.0" y="624" width="375" height="43"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gzb-jj-VHT">
-                                        <rect key="frame" x="8" y="5" width="359" height="30"/>
-                                        <color key="textColor" red="0.95817379320415186" green="1" blue="0.80008898403250228" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" red="0.49985330760000002" green="0.77008872549999996" blue="0.81267279049999996" alpha="0.75" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="gzb-jj-VHT" secondAttribute="bottom" constant="5" id="8eO-Ql-gLt"/>
-                                    <constraint firstAttribute="width" constant="375" id="Kpj-MT-Sky"/>
-                                    <constraint firstItem="gzb-jj-VHT" firstAttribute="top" secondItem="0h4-oj-GN1" secondAttribute="top" constant="5" id="M6Y-CZ-NTw"/>
-                                    <constraint firstAttribute="trailing" secondItem="gzb-jj-VHT" secondAttribute="trailing" constant="8" id="UMW-45-CBq"/>
-                                    <constraint firstAttribute="height" constant="43" id="YLt-oF-cg7"/>
-                                    <constraint firstItem="gzb-jj-VHT" firstAttribute="top" secondItem="0h4-oj-GN1" secondAttribute="top" constant="10" id="fED-mh-gtZ"/>
-                                    <constraint firstItem="gzb-jj-VHT" firstAttribute="leading" secondItem="0h4-oj-GN1" secondAttribute="leading" constant="8" id="g0a-0D-o3U"/>
-                                    <constraint firstAttribute="bottom" secondItem="gzb-jj-VHT" secondAttribute="bottom" constant="10" id="gnA-i5-NAo"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v7x-Pd-sFX">
-                                <rect key="frame" x="8" y="72" width="359" height="294"/>
+                                <rect key="frame" x="8" y="8" width="359" height="608"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tCl-YD-Y8n">
@@ -86,6 +64,28 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xpg-8x-DgH"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0h4-oj-GN1">
+                                <rect key="frame" x="0.0" y="624" width="375" height="43"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gzb-jj-VHT">
+                                        <rect key="frame" x="8" y="5" width="359" height="30"/>
+                                        <color key="textColor" red="0.95817379320415186" green="1" blue="0.80008898403250228" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.49985330760000002" green="0.77008872549999996" blue="0.81267279049999996" alpha="0.75" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gzb-jj-VHT" secondAttribute="bottom" constant="5" id="8eO-Ql-gLt"/>
+                                    <constraint firstAttribute="width" constant="375" id="Kpj-MT-Sky"/>
+                                    <constraint firstItem="gzb-jj-VHT" firstAttribute="top" secondItem="0h4-oj-GN1" secondAttribute="top" constant="5" id="M6Y-CZ-NTw"/>
+                                    <constraint firstAttribute="trailing" secondItem="gzb-jj-VHT" secondAttribute="trailing" constant="8" id="UMW-45-CBq"/>
+                                    <constraint firstAttribute="height" constant="43" id="YLt-oF-cg7"/>
+                                    <constraint firstItem="gzb-jj-VHT" firstAttribute="top" secondItem="0h4-oj-GN1" secondAttribute="top" constant="10" id="fED-mh-gtZ"/>
+                                    <constraint firstItem="gzb-jj-VHT" firstAttribute="leading" secondItem="0h4-oj-GN1" secondAttribute="leading" constant="8" id="g0a-0D-o3U"/>
+                                    <constraint firstAttribute="bottom" secondItem="gzb-jj-VHT" secondAttribute="bottom" constant="10" id="gnA-i5-NAo"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -443,7 +443,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KP3-dL-0xL"/>
+        <segue reference="xRT-x5-vA1"/>
         <segue reference="8su-Kv-eDc"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,8 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var urlTextField: UITextField!
     
+    var selectedImage = UIImage(named: "noimage.jpg")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,9 +38,7 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
         /* ---
          アイコン画像の保存
         --- */
-        let image = UIImage(named: "amazon_logo.png")!
-        let siteImageData = UIImagePNGRepresentation(image)
-        
+        let siteImageData = UIImagePNGRepresentation(selectedImage!)
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let directoryName = "Sites"
         let siteImageName = String(NSDate().timeIntervalSince1970) + ".png"
@@ -104,7 +104,7 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
      画像選択部分
     --- */
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         siteImageView.image = selectedImage
         
         picker.dismiss(animated: true, completion: nil)
