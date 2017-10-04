@@ -73,9 +73,11 @@ Cg
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cz-5n-XaD">
-                        <rect key="frame" x="329" y="25" width="31" height="30"/>
+                        <rect key="frame" x="315" y="25" width="52" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="削除"/>
+                        <state key="normal" title="削除">
+                            <color key="titleColor" red="0.76388007614213205" green="0.48384674249978993" blue="0.51585338267298986" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
                         <connections>
                             <action selector="deleteMemoWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HuO-Oa-zht"/>
                         </connections>
@@ -84,7 +86,7 @@ Cg
                         <rect key="frame" x="88" y="29" width="233" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
-                        <color key="textColor" red="0.59533768799999998" green="0.53103416219999999" blue="0.68796551169999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="textColor" red="0.42663935031503847" green="0.3814373860544335" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>

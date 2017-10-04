@@ -16,6 +16,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UICollectionViewDat
     @IBOutlet var queryField: UITextField!
     
     var selectedRow = 0
+    
+    /* ---
+     登録サイト
+     --- */
+    var siteDatas = [Dictionary<String,String>]()
+
 
     /*---
      背景画像読み込み
@@ -31,11 +37,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UICollectionViewDat
             }
         }
     }
-        
-    /* ---
-     登録サイト
-    --- */
-    var siteDatas = [Dictionary<String,String>]()
 
     //データの呼び出し
     func loadSite(){
@@ -53,10 +54,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UICollectionViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let title = UIImage(named: "title.png")
+        let imageView = UIImageView(image:title)
+        self.navigationItem.titleView = imageView
         
-        //背景画像指定
-        //self.view.backgroundColor = UIColor(patternImage: UIImage(named:"background.jpg")!)
+        loadBackground()
         
+        //データの呼び出し
+        loadSite()
+
         //データ・ソースメソッドをこのファイル内で処理する
         siteCollectionView.dataSource = self
         
@@ -67,8 +73,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UICollectionViewDat
         let nib = UINib(nibName: "SiteCollectionViewCell", bundle: Bundle.main)
         siteCollectionView.register(nib, forCellWithReuseIdentifier: "SiteCell")
         
-        //データ読み込み
-        loadSite()
+        //キーボード
+        queryField.returnKeyType = UIReturnKeyType.search
+        queryField.becomeFirstResponder()
         
         queryField.delegate = self
         KeyboardAvoiding.avoidingView = self.avoidingView

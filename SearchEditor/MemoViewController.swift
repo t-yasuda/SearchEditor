@@ -45,6 +45,10 @@ class MemoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadBackground()
+        
+        loadMemo()
+        
         //データ・ソースメソッドをこのファイル内で処理する
         memoTableView.dataSource = self
         
@@ -58,7 +62,6 @@ class MemoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let nib = UINib(nibName: "MemoTableViewCell", bundle: Bundle.main)
         memoTableView.register(nib, forCellReuseIdentifier: "MemoCell")
         
-        loadMemo()
     }
     
     override func didReceiveMemoryWarning() {

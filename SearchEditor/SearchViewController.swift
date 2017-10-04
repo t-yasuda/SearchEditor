@@ -43,7 +43,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             //メモから渡されたURLがある場合はそちらを開く
             showEditorField()
             editorField.text = passedMemo
-            search_url = passedUrlFromMemo
+            search_url = passedUrlFromMemo.removingPercentEncoding
             
         } else {
             //トップ画面から検索クエリを渡された場合は検索を行う
