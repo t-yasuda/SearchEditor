@@ -21,7 +21,7 @@ class EditSiteDetailViewController: UIViewController, UIImagePickerControllerDel
     var passedRow: Int!
     var passedSiteData: Dictionary<String, Any>!
     
-    var selectedImage = UIImage(named: "noimage.jpg")
+    var selectedImage = UIImage(named: "noimage.png")
     
     /*---
      背景画像読み込み

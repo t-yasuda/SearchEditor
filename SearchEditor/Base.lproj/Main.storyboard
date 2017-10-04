@@ -12,6 +12,7 @@
         <!--Navigation Controller-->
         <scene sceneID="gnX-5q-yjc">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tMf-So-1WB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="H4N-Ut-aYK" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Kj-Ee-KUy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -21,7 +22,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ktZ-vc-6YF"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tMf-So-1WB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1577" y="134"/>
         </scene>
@@ -436,7 +436,7 @@
                                     <action selector="deleteSite" destination="HLz-Kr-BN9" eventType="touchUpInside" id="J9t-li-sZ1"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noimage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Bf7-Vn-0Dw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bf7-Vn-0Dw">
                                 <rect key="frame" x="107" y="88" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -484,9 +484,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="noimage.jpg" width="250" height="250"/>
+        <image name="noimage.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KP3-dL-0xL"/>
+        <segue reference="YCV-t2-0pk"/>
     </inferredMetricsTieBreakers>
 </document>

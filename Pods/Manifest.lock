@@ -1,0 +1,15 @@
+PODS:
+  - IHKeyboardAvoiding (4.0)
+  - NgKeyboardTracker (1.0.8)
+
+DEPENDENCIES:
+  - IHKeyboardAvoiding
+  - NgKeyboardTracker
+
+SPEC CHECKSUMS:
+  IHKeyboardAvoiding: d1063551a2bed47cdbeab255e3aa5d7847d7efa8
+  NgKeyboardTracker: 844e98833c76d76194fc8d1c40ed3efe6a50dc1a
+
+PODFILE CHECKSUM: f64ad9c84c0f33b44e27ff5676b2ffd9d03c56c2
+
+COCOAPODS: 1.2.1

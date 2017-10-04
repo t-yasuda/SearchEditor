@@ -183,8 +183,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         /*---
          メモ本文保存
         ---*/
-        //let image = "noimage.jpg"
-
         let date = Date()
         
         let formatter = DateFormatter()

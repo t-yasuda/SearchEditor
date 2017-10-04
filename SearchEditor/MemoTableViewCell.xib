@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="noimage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="BtU-7h-0XO">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="noimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="BtU-7h-0XO">
                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="BtU-7h-0XO" secondAttribute="height" multiplier="1:1" id="oVM-L1-crP"/>
@@ -105,6 +105,6 @@ Cg
         </tableViewCell>
     </objects>
     <resources>
-        <image name="noimage.jpg" width="250" height="250"/>
+        <image name="noimage.png" width="200" height="200"/>
     </resources>
 </document>

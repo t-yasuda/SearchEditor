@@ -1,0 +1,748 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02D27231FD0ED87E9A314A089717EB0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		12943375B7438A04D3AE4F502F24B710 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		171FE4DE5A850C5E247E1C3B7D2B004C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		1CD04CCFA3A8F5C4EBB4DEFAFDE9C80A /* Pods-SearchEditor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DE424AD57B4C589707B5269C63E191D0 /* Pods-SearchEditor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21662C64A371BDF77972D3EFD57A6252 /* KeyboardAvoiding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D9CE037E5242BB10F8873F37406083 /* KeyboardAvoiding.swift */; };
+		285BE7EA3125E74C8049574EBF42FC92 /* NgPseudoInputAccessoryViewCoordinatorPrivates.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B22DE60F38902EF2DEB010B29B4202 /* NgPseudoInputAccessoryViewCoordinatorPrivates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A89FF602AD2C159D74C444AE5445456 /* NgKeyboardTracker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E139E0562C9B940083C1CE99BFFC6C64 /* NgKeyboardTracker-dummy.m */; };
+		3F114BB5C240582263090FEB2A186780 /* NgPseudoInputAccessoryViewCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = A588CA1A97DDAC58325E5A5534E9E08D /* NgPseudoInputAccessoryViewCoordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4289A6BA490E261D4AFEBC4797706D6E /* IHKeyboardAvoiding-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 975772D51EDDD8BE653D17EA3CEC5348 /* IHKeyboardAvoiding-dummy.m */; };
+		55C4993F56567327CE3C72D28AE60CE0 /* NgKeyboardTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = A6224ED31A83AC08B25A2083149BFBFE /* NgKeyboardTracker.m */; };
+		5B99901D67AC805C3F887B17B7D5A298 /* NgKeyboardTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D6D19D6B01DABCCD7B974EB171DCDD2 /* NgKeyboardTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DD42A8ADAE31EF38B330D852FF07D53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		817C5497F6E2C5AC290679AD27DAD77A /* NgKeyboardTracker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B46BC5E64D0C38648B5AE5FDD8122AC /* NgKeyboardTracker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B73F4359110CFB51CCD232C8CC10E31 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		C90E10351CD6B4E34F101420159DE668 /* KeyboardDismissingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1D7E51D52D645DA49C07FA02E701B3 /* KeyboardDismissingView.swift */; };
+		D7EEB930F68080F810BC628A1CE155ED /* NgPseudoInputAccessoryViewCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = B29C325301B64DE35B9CD6BCD26A917D /* NgPseudoInputAccessoryViewCoordinator.m */; };
+		E84B29A5D4B8855D77EE08858940698A /* Pods-SearchEditor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD5A4B0548C25141AC4F9D4B418CE45 /* Pods-SearchEditor-dummy.m */; };
+		EBA49F55F1E15D22FB191CD55127BC5E /* IHKeyboardAvoiding-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A74BACA8DEA72F2F1D8D03DEAEBEC25F /* IHKeyboardAvoiding-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6A5DB21AB0CF2C153C0A915FE386EDC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E934FAE6B0EA45AF5CD53125D68C467;
+			remoteInfo = NgKeyboardTracker;
+		};
+		C6C3D6C7A480350C098BEAB05C68F92F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 033B2F5EFC98402794E5FA4A2E42BD9F;
+			remoteInfo = IHKeyboardAvoiding;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0187776D45549CC641D250DAD71699C9 /* Pods-SearchEditor-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SearchEditor-resources.sh"; sourceTree = "<group>"; };
+		154B1B99AED37EB1A3364D92A31076AB /* Pods-SearchEditor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SearchEditor.modulemap"; sourceTree = "<group>"; };
+		2E6F1161C4DC57C87B959F17BF4CFE50 /* Pods-SearchEditor-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SearchEditor-frameworks.sh"; sourceTree = "<group>"; };
+		3F1D7E51D52D645DA49C07FA02E701B3 /* KeyboardDismissingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardDismissingView.swift; path = Sources/KeyboardDismissingView.swift; sourceTree = "<group>"; };
+		42B22DE60F38902EF2DEB010B29B4202 /* NgPseudoInputAccessoryViewCoordinatorPrivates.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NgPseudoInputAccessoryViewCoordinatorPrivates.h; path = NgKeyboardTracker/NgPseudoInputAccessoryViewCoordinatorPrivates.h; sourceTree = "<group>"; };
+		4841B3866106AC75E63DD731697B456E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D6D19D6B01DABCCD7B974EB171DCDD2 /* NgKeyboardTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NgKeyboardTracker.h; path = NgKeyboardTracker/NgKeyboardTracker.h; sourceTree = "<group>"; };
+		596B27330C50632BE9872E9942997C62 /* NgKeyboardTracker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = NgKeyboardTracker.modulemap; sourceTree = "<group>"; };
+		6923AB8D1D7D68BF1215A8B49E76B18B /* Pods-SearchEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SearchEditor.debug.xcconfig"; sourceTree = "<group>"; };
+		7BBF9B0E8EB8146564C3965C26A63A2E /* Pods_SearchEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SearchEditor.framework; path = "Pods-SearchEditor.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		91D9CE037E5242BB10F8873F37406083 /* KeyboardAvoiding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAvoiding.swift; path = Sources/KeyboardAvoiding.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		975772D51EDDD8BE653D17EA3CEC5348 /* IHKeyboardAvoiding-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IHKeyboardAvoiding-dummy.m"; sourceTree = "<group>"; };
+		9B46BC5E64D0C38648B5AE5FDD8122AC /* NgKeyboardTracker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NgKeyboardTracker-umbrella.h"; sourceTree = "<group>"; };
+		A17F2FBA1F91F3FE8090FE2B7E151B49 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A588CA1A97DDAC58325E5A5534E9E08D /* NgPseudoInputAccessoryViewCoordinator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NgPseudoInputAccessoryViewCoordinator.h; path = NgKeyboardTracker/NgPseudoInputAccessoryViewCoordinator.h; sourceTree = "<group>"; };
+		A6224ED31A83AC08B25A2083149BFBFE /* NgKeyboardTracker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NgKeyboardTracker.m; path = NgKeyboardTracker/NgKeyboardTracker.m; sourceTree = "<group>"; };
+		A74BACA8DEA72F2F1D8D03DEAEBEC25F /* IHKeyboardAvoiding-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IHKeyboardAvoiding-umbrella.h"; sourceTree = "<group>"; };
+		A79BB92F600C96138E6C5EEE6180299F /* NgKeyboardTracker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NgKeyboardTracker.xcconfig; sourceTree = "<group>"; };
+		AAFA0E2DC737C68A17B35DD2E9DDEB21 /* Pods-SearchEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SearchEditor.release.xcconfig"; sourceTree = "<group>"; };
+		B29C325301B64DE35B9CD6BCD26A917D /* NgPseudoInputAccessoryViewCoordinator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NgPseudoInputAccessoryViewCoordinator.m; path = NgKeyboardTracker/NgPseudoInputAccessoryViewCoordinator.m; sourceTree = "<group>"; };
+		B37DE8D35DA0AB42499CEDD76049C0EC /* IHKeyboardAvoiding-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IHKeyboardAvoiding-prefix.pch"; sourceTree = "<group>"; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B6ECB65131399104CF0CD83944D38B9D /* Pods-SearchEditor-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SearchEditor-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B74BA3A5F6DE0A8C26327F522B66F399 /* NgKeyboardTracker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NgKeyboardTracker-prefix.pch"; sourceTree = "<group>"; };
+		C4CD972FBAF8BCB3D846866A0E858DB2 /* IHKeyboardAvoiding.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IHKeyboardAvoiding.xcconfig; sourceTree = "<group>"; };
+		C9A8F80C67BE6D6B5A6E4D6D7DFEBAB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DBF99D64486BA1B050D762AE7797B5D7 /* IHKeyboardAvoiding.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = IHKeyboardAvoiding.modulemap; sourceTree = "<group>"; };
+		DDBA2DD9AA71F1869723C2215FF39844 /* Pods-SearchEditor-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SearchEditor-acknowledgements.plist"; sourceTree = "<group>"; };
+		DDD5A4B0548C25141AC4F9D4B418CE45 /* Pods-SearchEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SearchEditor-dummy.m"; sourceTree = "<group>"; };
+		DE424AD57B4C589707B5269C63E191D0 /* Pods-SearchEditor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SearchEditor-umbrella.h"; sourceTree = "<group>"; };
+		E139E0562C9B940083C1CE99BFFC6C64 /* NgKeyboardTracker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NgKeyboardTracker-dummy.m"; sourceTree = "<group>"; };
+		F0E218FC2B95DE703EEBD5751991D305 /* NgKeyboardTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NgKeyboardTracker.framework; path = NgKeyboardTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F299590D4EA68409AC9F5B276957DD18 /* IHKeyboardAvoiding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IHKeyboardAvoiding.framework; path = IHKeyboardAvoiding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		081174D0A53CF68489F4EA8E7778A27A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12943375B7438A04D3AE4F502F24B710 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4908E3F0460E3C9CDA7C3F4AA26EFF34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				171FE4DE5A850C5E247E1C3B7D2B004C /* Foundation.framework in Frameworks */,
+				9B73F4359110CFB51CCD232C8CC10E31 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73745C861440DD4C4BA0DBE54E68D79B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02D27231FD0ED87E9A314A089717EB0A /* Foundation.framework in Frameworks */,
+				6DD42A8ADAE31EF38B330D852FF07D53 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		032CA692B9FF529146359A52E35F8C4A /* IHKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				91D9CE037E5242BB10F8873F37406083 /* KeyboardAvoiding.swift */,
+				3F1D7E51D52D645DA49C07FA02E701B3 /* KeyboardDismissingView.swift */,
+				D8B80FD91F6847EE83438BA307A21B25 /* Support Files */,
+			);
+			name = IHKeyboardAvoiding;
+			path = IHKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		0B820EAE1B79F5F3FEC7E73B69CC4A61 /* Pods-SearchEditor */ = {
+			isa = PBXGroup;
+			children = (
+				A17F2FBA1F91F3FE8090FE2B7E151B49 /* Info.plist */,
+				154B1B99AED37EB1A3364D92A31076AB /* Pods-SearchEditor.modulemap */,
+				B6ECB65131399104CF0CD83944D38B9D /* Pods-SearchEditor-acknowledgements.markdown */,
+				DDBA2DD9AA71F1869723C2215FF39844 /* Pods-SearchEditor-acknowledgements.plist */,
+				DDD5A4B0548C25141AC4F9D4B418CE45 /* Pods-SearchEditor-dummy.m */,
+				2E6F1161C4DC57C87B959F17BF4CFE50 /* Pods-SearchEditor-frameworks.sh */,
+				0187776D45549CC641D250DAD71699C9 /* Pods-SearchEditor-resources.sh */,
+				DE424AD57B4C589707B5269C63E191D0 /* Pods-SearchEditor-umbrella.h */,
+				6923AB8D1D7D68BF1215A8B49E76B18B /* Pods-SearchEditor.debug.xcconfig */,
+				AAFA0E2DC737C68A17B35DD2E9DDEB21 /* Pods-SearchEditor.release.xcconfig */,
+			);
+			name = "Pods-SearchEditor";
+			path = "Target Support Files/Pods-SearchEditor";
+			sourceTree = "<group>";
+		};
+		146E2F16C039CD1A2AD9990379122C98 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B820EAE1B79F5F3FEC7E73B69CC4A61 /* Pods-SearchEditor */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		557F22F1B56F936EEC093A9A9167B2B7 /* NgKeyboardTracker */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D19D6B01DABCCD7B974EB171DCDD2 /* NgKeyboardTracker.h */,
+				A6224ED31A83AC08B25A2083149BFBFE /* NgKeyboardTracker.m */,
+				A588CA1A97DDAC58325E5A5534E9E08D /* NgPseudoInputAccessoryViewCoordinator.h */,
+				B29C325301B64DE35B9CD6BCD26A917D /* NgPseudoInputAccessoryViewCoordinator.m */,
+				42B22DE60F38902EF2DEB010B29B4202 /* NgPseudoInputAccessoryViewCoordinatorPrivates.h */,
+				62B173E132A3BF5F4F46498B0CA0E6FE /* Support Files */,
+			);
+			name = NgKeyboardTracker;
+			path = NgKeyboardTracker;
+			sourceTree = "<group>";
+		};
+		62B173E132A3BF5F4F46498B0CA0E6FE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9A8F80C67BE6D6B5A6E4D6D7DFEBAB4 /* Info.plist */,
+				596B27330C50632BE9872E9942997C62 /* NgKeyboardTracker.modulemap */,
+				A79BB92F600C96138E6C5EEE6180299F /* NgKeyboardTracker.xcconfig */,
+				E139E0562C9B940083C1CE99BFFC6C64 /* NgKeyboardTracker-dummy.m */,
+				B74BA3A5F6DE0A8C26327F522B66F399 /* NgKeyboardTracker-prefix.pch */,
+				9B46BC5E64D0C38648B5AE5FDD8122AC /* NgKeyboardTracker-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NgKeyboardTracker";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				CED620AC56566F88A7EE9B62617BF879 /* Pods */,
+				ACFC0A29439740714B4EA8E3C4BDB5FA /* Products */,
+				146E2F16C039CD1A2AD9990379122C98 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		ACFC0A29439740714B4EA8E3C4BDB5FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F299590D4EA68409AC9F5B276957DD18 /* IHKeyboardAvoiding.framework */,
+				F0E218FC2B95DE703EEBD5751991D305 /* NgKeyboardTracker.framework */,
+				7BBF9B0E8EB8146564C3965C26A63A2E /* Pods_SearchEditor.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CED620AC56566F88A7EE9B62617BF879 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				032CA692B9FF529146359A52E35F8C4A /* IHKeyboardAvoiding */,
+				557F22F1B56F936EEC093A9A9167B2B7 /* NgKeyboardTracker */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D8B80FD91F6847EE83438BA307A21B25 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBF99D64486BA1B050D762AE7797B5D7 /* IHKeyboardAvoiding.modulemap */,
+				C4CD972FBAF8BCB3D846866A0E858DB2 /* IHKeyboardAvoiding.xcconfig */,
+				975772D51EDDD8BE653D17EA3CEC5348 /* IHKeyboardAvoiding-dummy.m */,
+				B37DE8D35DA0AB42499CEDD76049C0EC /* IHKeyboardAvoiding-prefix.pch */,
+				A74BACA8DEA72F2F1D8D03DEAEBEC25F /* IHKeyboardAvoiding-umbrella.h */,
+				4841B3866106AC75E63DD731697B456E /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/IHKeyboardAvoiding";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		564FCFA1B7930D3C3FFA7589F4C4B673 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBA49F55F1E15D22FB191CD55127BC5E /* IHKeyboardAvoiding-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84D8436A6CD04818CB8751B9E9B694CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CD04CCFA3A8F5C4EBB4DEFAFDE9C80A /* Pods-SearchEditor-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE16F765968F0C02AD48588DE6781885 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				817C5497F6E2C5AC290679AD27DAD77A /* NgKeyboardTracker-umbrella.h in Headers */,
+				5B99901D67AC805C3F887B17B7D5A298 /* NgKeyboardTracker.h in Headers */,
+				3F114BB5C240582263090FEB2A186780 /* NgPseudoInputAccessoryViewCoordinator.h in Headers */,
+				285BE7EA3125E74C8049574EBF42FC92 /* NgPseudoInputAccessoryViewCoordinatorPrivates.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		033B2F5EFC98402794E5FA4A2E42BD9F /* IHKeyboardAvoiding */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B258119BB7B9D52B224581BE8D28E382 /* Build configuration list for PBXNativeTarget "IHKeyboardAvoiding" */;
+			buildPhases = (
+				B888D5387385FB7503B8E94F0019DBA4 /* Sources */,
+				4908E3F0460E3C9CDA7C3F4AA26EFF34 /* Frameworks */,
+				564FCFA1B7930D3C3FFA7589F4C4B673 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IHKeyboardAvoiding;
+			productName = IHKeyboardAvoiding;
+			productReference = F299590D4EA68409AC9F5B276957DD18 /* IHKeyboardAvoiding.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3E934FAE6B0EA45AF5CD53125D68C467 /* NgKeyboardTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4BF931B1BB8F58DC2F3D556B7BBED4F /* Build configuration list for PBXNativeTarget "NgKeyboardTracker" */;
+			buildPhases = (
+				32EC66651B1787376E598EF905A8E650 /* Sources */,
+				73745C861440DD4C4BA0DBE54E68D79B /* Frameworks */,
+				AE16F765968F0C02AD48588DE6781885 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NgKeyboardTracker;
+			productName = NgKeyboardTracker;
+			productReference = F0E218FC2B95DE703EEBD5751991D305 /* NgKeyboardTracker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4744D799E636619CDE80153A2C74D5B4 /* Pods-SearchEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 594BDA4564F180338705C138530C5F02 /* Build configuration list for PBXNativeTarget "Pods-SearchEditor" */;
+			buildPhases = (
+				2C2A32C0988798C95E84C50C7BAEC023 /* Sources */,
+				081174D0A53CF68489F4EA8E7778A27A /* Frameworks */,
+				84D8436A6CD04818CB8751B9E9B694CB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79035C7EA7C8BE3C98567E67D579EDED /* PBXTargetDependency */,
+				C561765C321ADB14112E3110172D7527 /* PBXTargetDependency */,
+			);
+			name = "Pods-SearchEditor";
+			productName = "Pods-SearchEditor";
+			productReference = 7BBF9B0E8EB8146564C3965C26A63A2E /* Pods_SearchEditor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = ACFC0A29439740714B4EA8E3C4BDB5FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				033B2F5EFC98402794E5FA4A2E42BD9F /* IHKeyboardAvoiding */,
+				3E934FAE6B0EA45AF5CD53125D68C467 /* NgKeyboardTracker */,
+				4744D799E636619CDE80153A2C74D5B4 /* Pods-SearchEditor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C2A32C0988798C95E84C50C7BAEC023 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E84B29A5D4B8855D77EE08858940698A /* Pods-SearchEditor-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32EC66651B1787376E598EF905A8E650 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A89FF602AD2C159D74C444AE5445456 /* NgKeyboardTracker-dummy.m in Sources */,
+				55C4993F56567327CE3C72D28AE60CE0 /* NgKeyboardTracker.m in Sources */,
+				D7EEB930F68080F810BC628A1CE155ED /* NgPseudoInputAccessoryViewCoordinator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B888D5387385FB7503B8E94F0019DBA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4289A6BA490E261D4AFEBC4797706D6E /* IHKeyboardAvoiding-dummy.m in Sources */,
+				21662C64A371BDF77972D3EFD57A6252 /* KeyboardAvoiding.swift in Sources */,
+				C90E10351CD6B4E34F101420159DE668 /* KeyboardDismissingView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79035C7EA7C8BE3C98567E67D579EDED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IHKeyboardAvoiding;
+			target = 033B2F5EFC98402794E5FA4A2E42BD9F /* IHKeyboardAvoiding */;
+			targetProxy = C6C3D6C7A480350C098BEAB05C68F92F /* PBXContainerItemProxy */;
+		};
+		C561765C321ADB14112E3110172D7527 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NgKeyboardTracker;
+			target = 3E934FAE6B0EA45AF5CD53125D68C467 /* NgKeyboardTracker */;
+			targetProxy = 6A5DB21AB0CF2C153C0A915FE386EDC5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		14C25F30235CD053FFC68FA491BCFA1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAFA0E2DC737C68A17B35DD2E9DDEB21 /* Pods-SearchEditor.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SearchEditor/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SearchEditor/Pods-SearchEditor.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SearchEditor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		163D87BE96A63549B0EACF1CC31A2E90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		47644400CC0957726D2FF94E11932DFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A79BB92F600C96138E6C5EEE6180299F /* NgKeyboardTracker.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/NgKeyboardTracker/NgKeyboardTracker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NgKeyboardTracker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/NgKeyboardTracker/NgKeyboardTracker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = NgKeyboardTracker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		707B86CFB21B645E37109F39754D4051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		75AA15A56537AFEF1B6E7C26BC1BCF4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6923AB8D1D7D68BF1215A8B49E76B18B /* Pods-SearchEditor.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SearchEditor/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SearchEditor/Pods-SearchEditor.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SearchEditor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8269F551D81710626D0C3F1D58A608C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A79BB92F600C96138E6C5EEE6180299F /* NgKeyboardTracker.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/NgKeyboardTracker/NgKeyboardTracker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NgKeyboardTracker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/NgKeyboardTracker/NgKeyboardTracker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = NgKeyboardTracker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9376D14235A8FEE36EFEF2238CD5E0A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4CD972FBAF8BCB3D846866A0E858DB2 /* IHKeyboardAvoiding.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/IHKeyboardAvoiding/IHKeyboardAvoiding-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/IHKeyboardAvoiding/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/IHKeyboardAvoiding/IHKeyboardAvoiding.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = IHKeyboardAvoiding;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AF6A6C61FA2A49DB2CF1C16EF1BDC947 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4CD972FBAF8BCB3D846866A0E858DB2 /* IHKeyboardAvoiding.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/IHKeyboardAvoiding/IHKeyboardAvoiding-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/IHKeyboardAvoiding/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/IHKeyboardAvoiding/IHKeyboardAvoiding.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = IHKeyboardAvoiding;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				163D87BE96A63549B0EACF1CC31A2E90 /* Debug */,
+				707B86CFB21B645E37109F39754D4051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		594BDA4564F180338705C138530C5F02 /* Build configuration list for PBXNativeTarget "Pods-SearchEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75AA15A56537AFEF1B6E7C26BC1BCF4A /* Debug */,
+				14C25F30235CD053FFC68FA491BCFA1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B258119BB7B9D52B224581BE8D28E382 /* Build configuration list for PBXNativeTarget "IHKeyboardAvoiding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9376D14235A8FEE36EFEF2238CD5E0A9 /* Debug */,
+				AF6A6C61FA2A49DB2CF1C16EF1BDC947 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4BF931B1BB8F58DC2F3D556B7BBED4F /* Build configuration list for PBXNativeTarget "NgKeyboardTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8269F551D81710626D0C3F1D58A608C4 /* Debug */,
+				47644400CC0957726D2FF94E11932DFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
