@@ -213,7 +213,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Safariで開く" id="DcD-vJ-cEo">
                                             <connections>
-                                                <action selector="openInSafari" destination="9H0-qm-TJe" id="0kt-eV-13h"/>
+                                                <action selector="openInSafari" destination="9H0-qm-TJe" id="aoO-79-YLD"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -296,6 +296,8 @@
                     <connections>
                         <outlet property="avoidingView" destination="QOw-ix-XqJ" id="CBe-fV-TK5"/>
                         <outlet property="editorField" destination="FeZ-PK-Xxu" id="PeB-gs-eFI"/>
+                        <outlet property="saveButton" destination="rkJ-CO-wsk" id="doa-7q-ZDj"/>
+                        <outlet property="updateButton" destination="kfT-Pc-4Hh" id="saI-c4-W9I"/>
                         <outlet property="webView" destination="3lW-RF-glG" id="kTk-Mn-5j7"/>
                     </connections>
                 </viewController>
@@ -535,6 +537,6 @@
         <image name="noimage.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YCV-t2-0pk"/>
+        <segue reference="KP3-dL-0xL"/>
     </inferredMetricsTieBreakers>
 </document>

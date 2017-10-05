@@ -13,6 +13,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     //エディタ
     @IBOutlet var avoidingView: UIView!
     @IBOutlet var editorField: UITextView!
+    @IBOutlet var saveButton: UIButton!
+    @IBOutlet var updateButton: UIButton!
 
     //webView
     @IBOutlet weak var webView: UIWebView!
@@ -45,6 +47,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             editorField.text = passedMemo
             search_url = passedUrlFromMemo.removingPercentEncoding
             
+            updateButton.isHidden = false
+            
         } else {
             //トップ画面から検索クエリを渡された場合は検索を行う
             hideEditorField()
@@ -59,6 +63,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             } else {
                 search_url = "https://search.goo.ne.jp/web.jsp?MT="+passedQuery+"&IE=UTF-8&OE=UTF-8"
             }
+            
+            updateButton.isHidden = true
             
         }
         
@@ -134,6 +140,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         UIGraphicsEndImageContext()
         
         return resizedImage!
+        
     }
     
     @IBAction func saveMemo(){
@@ -228,6 +235,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         //IndexPathRowを最新にする
         indexPathRow = 0
+        
+        showAlertSave()
+        updateButton.isHidden = false
 
     }
     
@@ -278,14 +288,52 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         //IndexPathRowを最新にする
         indexPathRow = 0
+        
+        showAlertUpdate()
     }
     
+    /* ---
+     safariで開く
+     --- */
     @IBAction func openInSafari(){
         let url = URL(string:webView.stringByEvaluatingJavaScript(from: "document.URL")!)
         
         if( UIApplication.shared.canOpenURL(url!) ) {
             UIApplication.shared.open(url!)
         }
+    }
+    
+    /* ---
+     アラート
+    --- */
+    @IBAction func showAlertSave(){
+        //アラートの表示
+        let alert = UIAlertController(title: "保存成功", message: "メモが保存されました", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            //OKボタンを押したときのアクション
+            alert.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(okAction)
+        
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func showAlertUpdate(){
+        //アラートの表示
+        let alert = UIAlertController(title: "更新成功", message: "メモが更新されました", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            //OKボタンを押したときのアクション
+            alert.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(okAction)
+        
+        
+        self.present(alert, animated: true, completion: nil)
     }
 
     
