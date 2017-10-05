@@ -49,6 +49,8 @@ class MemoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         loadMemo()
         
+        self.navigationItem.title = "メモ一覧";
+        
         //データ・ソースメソッドをこのファイル内で処理する
         memoTableView.dataSource = self
         

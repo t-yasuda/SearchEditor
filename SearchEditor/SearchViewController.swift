@@ -280,6 +280,15 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         indexPathRow = 0
     }
     
+    @IBAction func openInSafari(){
+        let url = URL(string:webView.stringByEvaluatingJavaScript(from: "document.URL")!)
+        
+        if( UIApplication.shared.canOpenURL(url!) ) {
+            UIApplication.shared.open(url!)
+        }
+    }
+
+    
     /* -----
      戻る
     ----- */
