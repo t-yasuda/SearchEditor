@@ -9,7 +9,7 @@
 import UIKit
 import IHKeyboardAvoiding
 
-class SearchViewController: UIViewController, UITextFieldDelegate {
+class SearchViewController: UIViewController, UITextFieldDelegate, UIWebViewDelegate {
     //エディタ
     @IBOutlet var avoidingView: UIView!
     @IBOutlet var editorField: UITextView!
@@ -18,6 +18,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
     //webView
     @IBOutlet weak var webView: UIWebView!
+    
+    @IBOutlet var progressView: UIProgressView!
+    var hasFinishedLoading = false
+    var progressParam: Float = 0
     
     //メモから渡されたURLとメモ
     var passedUrlFromMemo: String!
@@ -75,6 +79,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         webView.loadRequest(request as URLRequest)
 
         KeyboardAvoiding.avoidingView = self.avoidingView
+        
+        webView.delegate = self
+    }
+    
+    deinit {
+        webView.stopLoading()
+        webView.delegate = nil
     }
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -94,6 +105,57 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    /*---
+     プログレスバー
+     ---*/
+    func updateProgressView() {
+        if progressParam == 1 {
+            let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
+                self.progressView.isHidden = true
+            })
+            
+        } else {
+            if hasFinishedLoading {
+                progressParam = 1.0
+            } else {
+                if progressParam > 0.9 {
+                    progressParam += 0.00001
+                } else if progressParam > 0.8 {
+                    progressParam += 0.0001
+                } else {
+                    progressParam += 0.001
+                }
+            }
+            progressView.setProgress(progressParam, animated: true)
+            
+            let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(0.008 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
+                self.updateProgressView()
+            })
+        }
+    }
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        hasFinishedLoading = false
+        updateProgressView()
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        self.hasFinishedLoading = true
+        updateProgressView()
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        self.hasFinishedLoading = true
+        updateProgressView()
+
+    }
+    
     
     /* -----
      キーボード
@@ -291,7 +353,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         showAlertUpdate()
     }
-    
+
     /* ---
      safariで開く
      --- */
@@ -345,3 +407,5 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
 }
+
+

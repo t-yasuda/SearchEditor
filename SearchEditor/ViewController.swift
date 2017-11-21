@@ -46,8 +46,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UICollectionViewDat
             siteDatas = ud.array(forKey: "siteArray") as! [Dictionary<String,String>]
         } else {
             siteDatas = [
-                ["title": "goo", "url": "https://search.goo.ne.jp/web.jsp?MT=[QUERY]&IE=UTF-8&OE=UTF-8"],
-                ["title": "amazon", "url": "https://www.amazon.co.jp/gp/search?ie=UTF8&keywords=[QUERY]"],
+                ["title": "goo(sample)", "url": "https://search.goo.ne.jp/web.jsp?MT=[QUERY]&IE=UTF-8&OE=UTF-8"],
+                ["title": "amazon(sample)", "url": "https://www.amazon.co.jp/gp/search?ie=UTF8&keywords=[QUERY]"],
             ]
         }
     }
